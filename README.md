@@ -3,6 +3,6 @@ django-blog
 ==================
 = DJANGO - BLOG ==
 ==================
-'''bash
+```bash
 Pequeno e eficiente blog feito em django
-'''
+```
