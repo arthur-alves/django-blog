@@ -96,3 +96,7 @@ STATIC_URL = '/static/'
 
 if os.path.exists(os.path.join(BASE_DIR, 'local_settings.py')):
     from local_settings import *
+
+
+# if os.path.join(BASE_DIR, 'deploy_settings.py'):
+#     from deploys_settings import *
