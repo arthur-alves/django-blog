@@ -24,6 +24,10 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates/'),
+)
+
 ALLOWED_HOSTS = []
 
 
@@ -89,3 +93,6 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR + '/static/'
 STATIC_URL = '/static/'
+
+if os.path.exists(os.path.join(BASE_DIR, 'local_settings.py')):
+    from local_settings import *
