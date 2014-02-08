@@ -69,12 +69,12 @@
       <div class="row g_artigo">
         <!-- Corpo capa -->
         <div class="col-md-8">
+          {% block artigos %}
           <div class="h2_title">
             <h2>Artigos</h2>
           </div>
           <div class="clearfix"></div>
-          <!-- Item -->
-          
+          <!-- Item -->           
           <div class="topic_box">
             {% for i in posts %}
             <div class="row topic_item">
@@ -83,13 +83,14 @@
                   <img src="http://placehold.it/150x100">
                 </div>              
                 <div class="col-md-9">
-                  <p><span id="category">{{i.category}}:</span>{{i.resumo}}</p>
+                  <p><span id="category">{{i.category}}:</span>{{i.wording}}</p>
                 </div>
               </a>
             </div>
            <!-- Item -->
            {% endfor %}
           </div>
+          {% endblock %}
         </div>
         <!-- SIDE BAR -->
         <div class="col-md-4 side_bar">
@@ -102,6 +103,7 @@
           </div>
           
         </div>
+        
       </div>
       
       

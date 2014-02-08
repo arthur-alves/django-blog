@@ -39,13 +39,17 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',  
+    'markupfield',
     'south',
     'django_extensions',
     'blog',
     'gunicorn',
 
 )
+
+# For the fluent markup plugin
+FLUENT_MARKUP_LANGUAGES = ['restructuredtext', 'markdown', 'textile']
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
