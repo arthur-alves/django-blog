@@ -13,6 +13,7 @@ body{
 
 }
 
+
 .g_header{
 	width: 250px;
 	height: 20px;
@@ -53,6 +54,12 @@ body{
 	text-align: center;
 	padding: 10px 0 5px 0;	
 	color:white;
+}
+
+.h2_title img{
+
+	width:30px;
+	height:30px;
 }
 
 .topic{
@@ -141,6 +148,11 @@ body{
 	color:white;
 }
 
+.g_nav img{
+	width:30px;
+	height:30px;
+}
+
 .side_bar_item{
 	text-align: left;
 	padding-top: 20px;
@@ -154,4 +166,15 @@ body{
 	margin-right: 5px;
 	/* sombra interna */
 
+}
+
+.interna_meio p{
+	color: black;
+	text-align: left;
+	font-size: 20px;
+}
+
+.interna_meio img{
+	text-align: center;	
+	margin-bottom: 10px;
 }
