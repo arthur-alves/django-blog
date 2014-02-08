@@ -9,9 +9,9 @@ Instalação:
 ===========
 Requisitos:
 
->Postgresql
->pacote python-dev
->postgresql-server-dev-X.Y (Onde X.Y é a versão do postgresql ex: 9.1)
+>Postgresql  
+>pacote python-dev  
+>postgresql-server-dev-X.Y (Onde X.Y é a versão do postgresql ex: 9.1)  
 
 
 ```bash
