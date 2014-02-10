@@ -95,5 +95,5 @@ STATIC_ROOT = BASE_DIR + '/static/'
 STATIC_URL = '/static/'
 
 
-if os.path.join(BASE, 'deploy_settings.py'):
-    from deploys_settings import *
+if os.path.join(BASE_DIR, 'deploy_settings.py'):
+    from deploy_settings import *
