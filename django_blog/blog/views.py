@@ -5,7 +5,7 @@ from blog.models import Posts
 
 def index(request):
     return render_to_response('blog/index.html', {
-        'posts': Posts.objects.all().order_by('-pub_date')
+        'posts': Posts.objects.all().order_by('-pub_date').filter(published=True)
     })
 
 

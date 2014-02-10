@@ -27,7 +27,7 @@ class Posts(models.Model):
     slug = AutoSlugField(populate_from='title', overwrite=True,
                          max_length=255, editable=False)
     resumo = models.TextField(u'Resumo', validators=[MaxLengthValidator(220)])
-    wording = MarkupField()
+    wording = MarkupField(default_markup_type='markdown')
     tags = models.CharField(max_length=255)
     category = models.ForeignKey(Category)
     pub_date = models.DateTimeField(
@@ -40,3 +40,4 @@ class Posts(models.Model):
 
     def __unicode__(self):
         return self.title
+
