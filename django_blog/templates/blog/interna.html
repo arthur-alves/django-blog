@@ -1,18 +1,18 @@
-{% extends "blog/index.html" %}
-{% block artigos %}
-{% for i in posts %}
+{% extends "blog/base.html" %}
+{% block article %}
+
 <div class="h2_title">
-	<h2>{{i.title}}</h2>
+	<h2>{{article.title}}</h2>
 </div>
 <div class="clearfix"></div>
 <!-- Item -->
 <div class="topic_box">
 	<!-- Item -->
 	<div class="row">				
-		{{i.wording}}
+		{{article.wording}}
 	</div>
 </div>
-{% endfor %}
+
 {% endblock %}
 
 

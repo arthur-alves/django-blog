@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from django.core.validators import MaxLengthValidator
 from markupfield.fields import MarkupField
+from django_extensions.db.fields import AutoSlugField
 
 
 class Category(models.Model):
@@ -23,8 +24,10 @@ class Posts(models.Model):
     owner = models.ForeignKey(
         User, related_name='entries', verbose_name='Criador')
     title = models.CharField(u'Título', max_length=100)
+    slug = AutoSlugField(populate_from='title', overwrite=True,
+                         max_length=255, editable=False)
     resumo = models.TextField(u'Resumo', validators=[MaxLengthValidator(220)])
-    wording =  MarkupField()    
+    wording = MarkupField()
     tags = models.CharField(max_length=255)
     category = models.ForeignKey(Category)
     pub_date = models.DateTimeField(

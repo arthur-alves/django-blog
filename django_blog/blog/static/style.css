@@ -69,7 +69,7 @@ body{
 .topic_item{	
 	text-align: justify;
 	transition: color, box-shadow 0.3s ease;
-	padding-top:8px;	
+	padding:8px;	
 	margin-bottom: 10px;
 }
 
@@ -85,7 +85,7 @@ body{
 .topic_item img{
 	height:100px;
 	width:150px;	
-	transition: height, width 0.5s ease;
+	transition: height, width 0.5s ease;	
 }
 
 .topic_item a:link, a:visited{
@@ -111,6 +111,11 @@ body{
 #img_central img{
 	width:600px;
 	height:350px;
+}
+
+.logo_header{
+	background-color: rgba(0,0,0,0.6);
+	text-align: center;
 }
 
 .g_artigo{
@@ -153,6 +158,11 @@ body{
 	height:30px;
 }
 
+.g_nav span:before{
+	margin-right:5px; 
+}
+
+
 .side_bar_item{
 	text-align: left;
 	padding-top: 20px;
@@ -177,4 +187,85 @@ body{
 .interna_meio img{
 	text-align: center;	
 	margin-bottom: 10px;
+}
+
+/*Icon fonts*/
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?xu5ml');
+	src:url('fonts/icomoon.eot?#iefixxu5ml') format('embedded-opentype'),
+	url('fonts/icomoon.woff?xu5ml') format('woff'),
+	url('fonts/icomoon.ttf?xu5ml') format('truetype'),
+	url('fonts/icomoon.svg?xu5ml#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;	
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+	content: "\e600";
+}
+.icon-github:before {
+	content: "\e601";
+}
+.icon-newspaper:before {
+	content: "\e602";
+}
+.icon-tag:before {
+	content: "\e603";
+}
+.icon-image:before {
+	content: "\e604";
+}
+.icon-play:before {
+	content: "\e605";
+}
+.icon-music:before {
+	content: "\e606";
+}
+.icon-android:before {
+	content: "\e607";
+}
+.icon-tux:before {
+	content: "\e608";
+}
+.icon-github2:before {
+	content: "\e609";
+}
+.icon-clock:before {
+	content: "\e60a";
+}
+.icon-quill:before {
+	content: "\e60b";
+}
+.icon-calendar:before {
+	content: "\e60c";
+}
+.icon-star:before {
+	content: "\e60d";
+}
+.icon-heart:before {
+	content: "\e60e";
+}
+.icon-console:before {
+	content: "\e60f";
+}
+.icon-bubble:before {
+	content: "\e610";
+}
+.icon-file:before {
+	content: "\e611";
 }

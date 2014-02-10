@@ -1,130 +1,45 @@
-<!DOCTYPE html>
-{% load static %}
-{% get_static_prefix as STATIC_PREFIX %}
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <link rel="stylesheet" href="{{STATIC_PREFIX}}style.css">
-  <link rel="stylesheet" href="{{STATIC_PREFIX}}css/bootstrap.min.css">
-  <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
-
-</head>
-<body>
-  <div class="container">
-    <div class="row">     
-      <div class="row">
-        <a href="index.html"><img src="{{STATIC_PREFIX}}img/Modelo_Site.png"></a>
-      </div>
-      <div class="row g_shadow">        
-        <!-- Barra de navegação -->
-        <div class="g_menu">
-          <nav class="navbar g_nav">
-            <ul>
-              <li>
-                <img src="{{STATIC_PREFIX}}icons/start.png">
-                <a href="#">Home</a>
-              </li>
-              <li>|</li>
-              <li>
-                <img src="{{STATIC_PREFIX}}icons/artigos.png">
-                <a href="#">Artigos</a>
-              </li>
-              <li>|</li>
-              <li>
-                <img src="{{STATIC_PREFIX}}icons/evolution-tasks.png">
-                <a href="#">Listagem Geral</a>
-              </li>
-              <li>|</li>
-              <li>
-                <img src="{{STATIC_PREFIX}}icons/tutorial.png">
-                <a href="#">Tutoriais</a>
-              </li>
-
-              <li>|</li>
-              <li>
-                <img src="{{STATIC_PREFIX}}icons/avatar.png">
-                <a href="#">Créditos</a>
-              </li>
-              <li>|</li>
-              <li>
-                <img src="{{STATIC_PREFIX}}icons/contato.png">
-                <a href="#">Contato</a>
-              </li>
-            </ul>
-
-          </nav>
-        </div>
-      </div>
-      
-      
+{% extends "blog/base.html" %}
+{% block carrossel %}
+<div class="row g_center">
+  <!-- Imagem Central do carrousel -->        
+  <div class="row">
+    <div class="col-md-8" id="img_central">
+      <img src="http://placehold.it/600x350">
     </div>
-    <div class="row">
-      
-
-      <div class="row g_center">
-        <!-- Imagem Central do carrousel -->        
-        <div class="row">
-          <div class="col-md-8" id="img_central">
-            <img src="http://placehold.it/600x350">
-          </div>
-          <div class="col-md-4 side_img_carrousel">
-            <div class="item_car">
-              <img src="http://placehold.it/150x100">
-            </div>
-            <div class="item_car">
-              <img src="http://placehold.it/150x100">
-            </div>
-            <div class="item_car">
-              <img src="http://placehold.it/150x100">
-            </div>
-          </div>
-
-        </div>
+    <div class="col-md-4 side_img_carrousel">
+      <div class="item_car">
+        <img src="http://placehold.it/150x100">
       </div>
-      <div class="row g_artigo">
-        <!-- Corpo capa -->
-        <div class="col-md-8">
-          {% block artigos %}
-          <div class="h2_title">
-            <h2>Artigos</h2>
-          </div>
-          <div class="clearfix"></div>
-          <!-- Item -->           
-          <div class="topic_box">
-            {% for i in posts %}
-            <div class="row topic_item">
-              <a href="javascript:;">
-                <div class="col-md-3">
-                  <img src="http://placehold.it/150x100">
-                </div>              
-                <div class="col-md-9">
-                  <p><span id="category">{{i.category}}:</span>{{i.wording}}</p>
-                </div>
-              </a>
-            </div>
-            <!-- Item -->
-            {% endfor %}
-          </div>
-          {% endblock %}
-        </div>
-        <!-- SIDE BAR -->
-        <div class="col-md-4 side_bar">
-          <div class="h2_title">
-            <h2>Últimos tutoriais</h2>
-          </div>
-          <div class="side_bar_item">
-            <p>asdjashdusnbdjsndjnasdnjsndjnasjdnjas asjdnjasndjasnjd jasnd jasdn ajsdn asjdnasjdnasjd nasjdnasjdnasj</p>
-            
-          </div>
-          
-        </div>
-        
+      <div class="item_car">
+        <img src="http://placehold.it/150x100">
       </div>
-      
-      
+      <div class="item_car">
+        <img src="http://placehold.it/150x100">
+      </div>
     </div>
+
   </div>
-</body>
-</html>
+</div>      
+{% endblock %}
+{% block article %}
+<div class="h2_title">
+  <h2>Artigos</h2>
+</div>
+<div class="clearfix"></div>
+<!-- Item -->           
+<div class="topic_box">
+  {% for i in posts %}
+  <div class="row topic_item">
+    <a href="{% url 'interna' slug=i.slug %}">
+      <div class="col-md-3">
+        <img src="http://placehold.it/150x100">
+      </div>              
+      <div class="col-md-9">
+        <p><span id="category">{{i.category}}:</span>{{i.resumo}}</p>
+      </div>
+    </a>
+  </div>
+  <!-- Item -->
+  {% endfor %}
+</div>
+{% endblock %}

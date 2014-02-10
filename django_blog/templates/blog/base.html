@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="{{STATIC_PREFIX}}style.css">
+  <link rel="stylesheet" href="{{STATIC_PREFIX}}css/bootstrap.min.css">
+  <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">     
+      <div class="row logo_header">
+        <a href="index.html"><img src="{{STATIC_PREFIX}}img/Modelo_Site.png"></a>
+      </div>
+      <div class="row g_shadow">        
+        <!-- Barra de navegação -->
+        <div class="g_menu">
+          <nav class="navbar g_nav">
+            <ul>
+              <li>                
+                <a href="{% url 'home' %}"><span class="icon-home">Home</a>
+              </li>
+              <li>|</li>
+              <li>                
+                <a href="#"><span class="icon-newspaper">Artigos</a>
+              </li>
+              <li>|</li>
+              <li>                
+                <a href="#"><span class="icon-file"></span>Listagem Geral</a>
+              </li>
+              <li>|</li>
+              <li>                
+                <a href="#"><span class="icon-console"></span>Tutoriais</a>
+              </li>
+
+              <li>|</li>
+              <li>                
+                <a href="#"><span class="icon-bubble"></span>Contato</a>
+              </li>
+              <li>|</li>
+              <li>
+                <a href="#"><span class="icon-github"></span>Créditos</a>
+              </li>
+            </ul>
+
+          </nav>
+        </div>
+      </div>
+      
+      
+    </div>
+    <div class="row">
+      
+
+    {% block carrossel %}
+    {% endblock %}
+      <div class="row g_artigo">
+        <!-- Corpo capa -->
+        <div class="col-md-8">
+          {% block article %}
+         
+          {% endblock %}
+        </div>
+        <!-- SIDE BAR -->
+        <div class="col-md-4 side_bar">
+          <div class="h2_title">
+            <h2>Últimos tutoriais</h2>
+          </div>
+          <div class="side_bar_item">
+            <p>asdjashdusnbdjsndjnasdnjsndjnasjdnjas asjdnjasndjasnjd jasnd jasdn ajsdn asjdnasjdnasjd nasjdnasjdnasj</p>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</body>
+</html>
