@@ -25,7 +25,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates/'),
+    os.path.join(BASE_DIR,  'templates/'),
 )
 
 ALLOWED_HOSTS = []
@@ -39,13 +39,17 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',  
+    'markupfield',
     'south',
     'django_extensions',
     'blog',
     'gunicorn',
 
 )
+
+# For the fluent markup plugin
+FLUENT_MARKUP_LANGUAGES = ['restructuredtext', 'markdown', 'textile']
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -94,6 +98,8 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR + '/static/'
 STATIC_URL = '/static/'
 
+if os.path.exists(os.path.join(BASE_DIR, 'local_settings.py')):
+    from local_settings import *
 
 if os.path.join(BASE_DIR, 'deploy_settings.py'):
     from deploy_settings import *

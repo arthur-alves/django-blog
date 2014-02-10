@@ -1,130 +1,130 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)http://getbootstrap.com/examples/carousel/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="static/djangopony.png">
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="{{STATIC_PREFIX}}style.css">
+  <link rel="stylesheet" href="{{STATIC_PREFIX}}css/bootstrap.min.css">
+  <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
 
-    <title>Django Fácil</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="static/bootstrap.css" rel="stylesheet">
-    <link href="static/style.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom styles for this template -->    
-  <style id="holderjs-style" type="text/css"></style><script type="text/javascript" charset="utf-8" src="chrome-extension://cpngackimfmofbokmjmljamhdncknpmg/page_context.js"></script></head>
-<!-- NAVBAR
-================================================== -->
-  <body style="" screen_capture_injected="true">
-    <div class="navbar navbar-inverse">
-      <div class="container">
-
-        <div class="collapse navbar-collapse" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="javascript:;">Django Fácil</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="javascript:;"><span class="glyphicon glyphicon-home"></span></a></li>
-                <li><a href="javascript:;#about">Tutoriais</a></li>
-                <li><a href="javascript:;#contact">Sobre</a></li>
-                <li><a href="javascript:;#contact">Contato</a></li>
-                
-              </ul>
-            </div>
-          </div>
-        </div>
-
+</head>
+<body>
+  <div class="container">
+    <div class="row">     
+      <div class="row">
+        <a href="index.html"><img src="{{STATIC_PREFIX}}img/Modelo_Site.png"></a>
       </div>
+      <div class="row g_shadow">        
+        <!-- Barra de navegação -->
+        <div class="g_menu">
+          <nav class="navbar g_nav">
+            <ul>
+              <li>
+                <img src="{{STATIC_PREFIX}}icons/start.png">
+                <a href="#">Home</a>
+              </li>
+              <li>|</li>
+              <li>
+                <img src="{{STATIC_PREFIX}}icons/artigos.png">
+                <a href="#">Artigos</a>
+              </li>
+              <li>|</li>
+              <li>
+                <img src="{{STATIC_PREFIX}}icons/evolution-tasks.png">
+                <a href="#">Listagem Geral</a>
+              </li>
+              <li>|</li>
+              <li>
+                <img src="{{STATIC_PREFIX}}icons/tutorial.png">
+                <a href="#">Tutoriais</a>
+              </li>
+
+              <li>|</li>
+              <li>
+                <img src="{{STATIC_PREFIX}}icons/avatar.png">
+                <a href="#">Créditos</a>
+              </li>
+              <li>|</li>
+              <li>
+                <img src="{{STATIC_PREFIX}}icons/contato.png">
+                <a href="#">Contato</a>
+              </li>
+            </ul>
+
+          </nav>
+        </div>
+      </div>
+      
+      
     </div>
-
-
-    <!-- Carousel
-    ================================================== -->
-    <!-- /.carousel -->
-
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-
-    <div class="container marketing">
-      <div class="row">           
-        <div class="col-md-8 center_post">
-         
-
-
-
-{% for i in posts %}
-
-<div class="row featurette each_posts">
-  <div class="col-md-3 post_img">
-    <img class="featurette-image img-responsive img-circle" data-src="holder.js/500x500/auto" alt="500x500" src="static/posts.jpg">
-  </div>
-
-  <div class="col-md-8 posts">
-    <a href="javascript:;">
-      <h3 class="featurette-heading"><span class="label label-info"> {{i.category}}</span> - {{i.title}}</h3>
-    </a>
-    <p class="lead">{{i.wording|truncatewords:"1"}}...</p>
-    
-  </div>
-  
-</div>
-<!-- <hr class="featurette-divider"> -->
-
-{% endfor %}
-
-
-
-       </div>
-       <div class="col-md-3 sidebar">
-        <h4><span class="glyphicon glyphicon-list"></span> - Menu</h4>
-        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Messages</a></li>
-      </ul>
-       </div>
-
-     </div>
-      <!-- /END THE FEATURETTES -->
+    <div class="row">
       
 
+      <div class="row g_center">
+        <!-- Imagem Central do carrousel -->        
+        <div class="row">
+          <div class="col-md-8" id="img_central">
+            <img src="http://placehold.it/600x350">
+          </div>
+          <div class="col-md-4 side_img_carrousel">
+            <div class="item_car">
+              <img src="http://placehold.it/150x100">
+            </div>
+            <div class="item_car">
+              <img src="http://placehold.it/150x100">
+            </div>
+            <div class="item_car">
+              <img src="http://placehold.it/150x100">
+            </div>
+          </div>
 
-    </div><!-- /.container -->
-    <!-- FOOTER -->
-    <footer>
-      <p class="pull-right"><a href="javascript:;">Back to top</a></p>
-      <p>© 2013 Company, Inc. · <a href="javascript:;">Privacy</a> · <a href="javascript:;">Terms</a></p>
-    </footer>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-  
-
-</body></html>
+        </div>
+      </div>
+      <div class="row g_artigo">
+        <!-- Corpo capa -->
+        <div class="col-md-8">
+          {% block artigos %}
+          <div class="h2_title">
+            <h2>Artigos</h2>
+          </div>
+          <div class="clearfix"></div>
+          <!-- Item -->           
+          <div class="topic_box">
+            {% for i in posts %}
+            <div class="row topic_item">
+              <a href="javascript:;">
+                <div class="col-md-3">
+                  <img src="http://placehold.it/150x100">
+                </div>              
+                <div class="col-md-9">
+                  <p><span id="category">{{i.category}}:</span>{{i.wording}}</p>
+                </div>
+              </a>
+            </div>
+            <!-- Item -->
+            {% endfor %}
+          </div>
+          {% endblock %}
+        </div>
+        <!-- SIDE BAR -->
+        <div class="col-md-4 side_bar">
+          <div class="h2_title">
+            <h2>Últimos tutoriais</h2>
+          </div>
+          <div class="side_bar_item">
+            <p>asdjashdusnbdjsndjnasdnjsndjnasjdnjas asjdnjasndjasnjd jasnd jasdn ajsdn asjdnasjdnasjd nasjdnasjdnasj</p>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+</body>
+</html>

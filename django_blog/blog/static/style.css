@@ -1,57 +1,180 @@
-*  {
-	margin:0;
-	padding:0;
+* {
+	padding: 0;
+	margin: 0;
+	font-family:ubuntu;
+	font-size:17px;
+	border:none;	
 }
 
-.navbar-nav li:hover{
-	background-image: url("images/hover.png");
-	background-repeat:  repeat-x;
-	background-position: bottom;
+body{
+
+	background-image:url("img/listras_bg.png");
+	background-attachment: fixed;
+
 }
-a:link{
+
+
+.g_header{
+	width: 250px;
+	height: 20px;
+	border: 20px solid #00a1a9;
+	border-left: 35px solid transparent;
+	border-top: 0px solid transparent;
+	border-right: 0px solid transparent;
+	float: right;		
+
+}
+
+.g_header input{
+	color: black;
+}
+
+.item_car{
+	width:200px;
+	height:100px;
+	margin-bottom: 20px;		
+}
+
+.g_menu{
+	background-color: #00a1a9;
+	height: 40px;	
+	text-align: center;
+	padding-top: 5px;
+}
+
+.h1_title{
+	background-color: #00a1a9;	
+	text-align: center;
+	padding: 10px 0 5px 0;
+	color:white;
+}
+
+.h2_title{
+	background-color: #00a1a9;	
+	text-align: center;
+	padding: 10px 0 5px 0;	
+	color:white;
+}
+
+.h2_title img{
+
+	width:30px;
+	height:30px;
+}
+
+.topic{
+	padding: 20px;	
+}
+
+.topic_item{	
+	text-align: justify;
+	transition: color, box-shadow 0.3s ease;
+	padding-top:8px;	
+	margin-bottom: 10px;
+}
+
+.topic_item:hover{
+	box-shadow: 2px 2px 5px #000000;
+}
+
+
+.topic_box{
+	padding:20px;
+}
+
+.topic_item img{
+	height:100px;
+	width:150px;	
+	transition: height, width 0.5s ease;
+}
+
+.topic_item a:link, a:visited{
 	text-decoration: none;
-}
-
-body {
-	background-color: #d9d9d9;
-	height: 100%;
-}
-
-.each_posts{	
-	padding: 20px;
-	background-color: #ffffff;
-	box-shadow: 2px 2px 10px #888888;
-/*	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;*/
-	margin-top: 10px;
-}
-
-.each_posts:hover{
-	box-shadow: 0px 0px 0px 3px #5bc0de;
+	color:#4D4D4D;	
 }
 
 
-.sidebar{
-	margin-top: 10px;
-	margin-left: 20px;	
-	padding: 10px;
-	background-color: #ffffff;
-	box-shadow: 2px 2px 5px #888888;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+.g_menu li a{
+	font-size: 17px;		
 }
 
-footer{
-	margin-top: 20px;
-	background-color: black;
-	padding: 10px;
-	position:absolute;
-	width: 100%;
-	bottom: 0;
+.g_shadow{
+	box-shadow: 0 7px 3px #000000;
 }
 
-.marketing{
-	height: 100%;
+.g_center{
+	background-color: rgba(0,0,0,0.6);
+	/*box-shadow: 5px 0px 0px #000000;*/
+	padding: 30px;
+}
+
+#img_central img{
+	width:600px;
+	height:350px;
+}
+
+.g_artigo{
+	background-color: rgba(255,255,255,0.8);
+	/*box-shadow: 5px 0px 0px #000000;*/
+	padding: 30px;
+	color: black;
+}
+
+.artigos p{
+	color:black;
+	text-align: justify;	
+}
+
+
+#img_central{
+	text-align: center;
+}
+
+.g_nav ul{
+	list-style:none;
+	text-align:center;
+
+}
+.g_nav li{
+	display:inline;
+	padding:18px;
+	color:white;
+
+}
+
+.g_nav li a{
+
+	text-decoration: none;
+	color:white;
+}
+
+.g_nav img{
+	width:30px;
+	height:30px;
+}
+
+.side_bar_item{
+	text-align: left;
+	padding-top: 20px;
+	color:#4D4D4D;
+}
+
+#category{
+	background:#00a1a9;
+	color:white;
+	padding:3px;
+	margin-right: 5px;
+	/* sombra interna */
+
+}
+
+.interna_meio p{
+	color: black;
+	text-align: left;
+	font-size: 20px;
+}
+
+.interna_meio img{
+	text-align: center;	
+	margin-bottom: 10px;
 }

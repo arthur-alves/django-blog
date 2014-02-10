@@ -1,0 +1,21 @@
+{% extends "blog/index.html" %}
+{% block artigos %}
+{% for i in posts %}
+<div class="h2_title">
+	<h2>{{i.title}}</h2>
+</div>
+<div class="clearfix"></div>
+<!-- Item -->
+<div class="topic_box">
+	<!-- Item -->
+	<div class="row">				
+		{{i.wording}}
+	</div>
+</div>
+{% endfor %}
+{% endblock %}
+
+
+
+
+<!-- Item -->

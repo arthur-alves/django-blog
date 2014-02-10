@@ -2,6 +2,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.core.validators import MaxLengthValidator
+from markupfield.fields import MarkupField
 
 
 class Category(models.Model):
@@ -20,8 +22,9 @@ class Category(models.Model):
 class Posts(models.Model):
     owner = models.ForeignKey(
         User, related_name='entries', verbose_name='Criador')
-    title = models.CharField(u'Título', max_length=255)
-    wording = models.TextField(u'Texto')
+    title = models.CharField(u'Título', max_length=100)
+    resumo = models.TextField(u'Resumo', validators=[MaxLengthValidator(220)])
+    wording =  MarkupField()    
     tags = models.CharField(max_length=255)
     category = models.ForeignKey(Category)
     pub_date = models.DateTimeField(
