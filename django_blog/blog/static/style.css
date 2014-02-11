@@ -56,12 +56,15 @@ blockquote{
 .h2_title{
 	background-color: #00a1a9;	
 	text-align: center;
-	padding: 10px 0 5px 0;	
-	color:white;
+	padding: 10px 0 10px 0;	
+	color:white;	
 }
 
-.h2_title img{
+.h2_title span{
+	padding-bottom: 5px;
+}
 
+.h2_title img{	
 	width:30px;
 	height:30px;
 }
@@ -78,7 +81,7 @@ blockquote{
 }
 
 .topic_item:hover{
-	box-shadow: 2px 2px 5px #000000;
+	box-shadow: 1px 1px 3px #000000;
 }
 
 
@@ -272,4 +275,14 @@ blockquote{
 }
 .icon-file:before {
 	content: "\e611";
+}
+.icon-console-big:before {
+	content: "\e60f";
+	font-size: 30px;
+	margin-right: 8px;
+}
+.icon-journal:before {
+	content: "\e602";
+	font-size: 40px;
+	margin-right: 8px;	
 }

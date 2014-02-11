@@ -7,8 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <link rel="stylesheet" href="{{STATIC_PREFIX}}style.css">
-  <link rel="stylesheet" href="{{STATIC_PREFIX}}css/bootstrap.min.css">
-  <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
+  <link rel="stylesheet" href="{{STATIC_PREFIX}}css/bootstrap.min.css">  
+  <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>  
+  
 
 </head>
 <body>
@@ -55,25 +56,28 @@
       
     </div>
     <div class="row">
-      
 
-    {% block carrossel %}
-    {% endblock %}
+
+      {% block carrossel %}
+      {% endblock %}
       <div class="row g_artigo">
         <!-- Corpo capa -->
         <div class="col-md-8">
           {% block article %}
-         
+
           {% endblock %}
         </div>
         <!-- SIDE BAR -->
         <div class="col-md-4 side_bar">
           <div class="h2_title">
-            <h2>Últimos tutoriais</h2>
+            <h2><span class="icon-console-big"></span>Últimos tutoriais</h2>
           </div>
           <div class="side_bar_item">
             <p>asdjashdusnbdjsndjnasdnjsndjnasjdnjas asjdnjasndjasnjd jasnd jasdn ajsdn asjdnasjdnasjd nasjdnasjdnasj</p>
             
+          </div>
+          <div>
+            <h3><span class="icon-file"></span> Categorias </h3>
           </div>
           
         </div>

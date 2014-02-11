@@ -23,22 +23,24 @@
 {% endblock %}
 {% block article %}
 <div class="h2_title">
-  <h2>Artigos</h2>
+  <h2><span class="icon-journal"></span>Artigos</h2>
 </div>
 <div class="clearfix"></div>
 <!-- Item -->           
 <div class="topic_box">
   {% for i in posts %}
-  <div class="row topic_item">
-    <a href="{% url 'interna' slug=i.slug %}">
+  <a href="{% url 'interna' slug=i.slug %}">
+    <div class="row topic_item">
+      
       <div class="col-md-3">
         <img src="http://placehold.it/150x100">
       </div>              
       <div class="col-md-9">
         <p><span id="category">{{i.category}}:</span>{{i.resumo}}</p>
       </div>
-    </a>
-  </div>
+      
+    </div>
+  </a>
   <!-- Item -->
   {% endfor %}
 </div>
