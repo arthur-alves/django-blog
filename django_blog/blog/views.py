@@ -1,7 +1,5 @@
 from django.shortcuts import render_to_response
-
 from blog.models import Posts
-
 
 def index(request):
     return render_to_response('blog/index.html', {

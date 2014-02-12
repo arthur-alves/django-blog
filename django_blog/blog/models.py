@@ -33,7 +33,7 @@ class Posts(models.Model):
     category = models.ForeignKey(Category)
     pub_date = models.DateTimeField(
         u'Data de Publicação', auto_now_add=True)
-    published = models.BooleanField(u'Publicar?', default=False)
+    published = models.BooleanField(u'Publicar?', default=False)    
 
     class Meta:
         verbose_name = u'Postagem'
@@ -41,4 +41,3 @@ class Posts(models.Model):
 
     def __unicode__(self):
         return self.title
-

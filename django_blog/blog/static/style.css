@@ -21,7 +21,7 @@ blockquote{
 .g_header{
 	width: 250px;
 	height: 20px;
-	border: 20px solid #00a1a9;
+	border: 20px solid #000000;
 	border-left: 35px solid transparent;
 	border-top: 0px solid transparent;
 	border-right: 0px solid transparent;
@@ -40,21 +40,21 @@ blockquote{
 }
 
 .g_menu{
-	background-color: #00a1a9;
+	background-color: #000000;
 	height: 40px;	
 	text-align: center;
 	padding-top: 5px;
 }
 
 .h1_title{
-	background-color: #00a1a9;	
+	background-color: #000000;	
 	text-align: center;
 	padding: 10px 0 5px 0;
 	color:white;
 }
 
 .h2_title{
-	background-color: #00a1a9;	
+	background-color: #000000;	
 	text-align: center;
 	padding: 10px 0 10px 0;	
 	color:white;	
@@ -105,28 +105,30 @@ blockquote{
 	font-size: 17px;		
 }
 
+.carousel-control {
+	width: 30% !important;	
+	background-image:none  !important;
+}
+
+
 .g_shadow{
 	box-shadow: 0 7px 3px #000000;
 }
 
 .g_center{
-	background-color: rgba(0,0,0,0.6);
+	background-color: rgba(0,0,0,0.3);
 	/*box-shadow: 5px 0px 0px #000000;*/
 	padding: 30px;
 }
 
-#img_central img{
-	width:600px;
-	height:350px;
-}
 
 .logo_header{
-	background-color: rgba(0,0,0,0.6);
+	background-color: rgba(0,0,0,1);
 	text-align: center;
 }
 
 .g_artigo{
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgba(255,255,255,0.9);
 	/*box-shadow: 5px 0px 0px #000000;*/
 	padding: 30px;
 	color: black;
@@ -177,7 +179,7 @@ blockquote{
 }
 
 #category{
-	background:#00a1a9;
+	background:#000000;
 	color:white;
 	padding:3px;
 	margin-right: 5px;

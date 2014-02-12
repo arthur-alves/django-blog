@@ -1,22 +1,41 @@
 {% extends "blog/base.html" %}
 {% block carrossel %}
-<div class="row g_center">
+<div class="row g_center carousel slide">
   <!-- Imagem Central do carrousel -->        
   <div class="row">
     <div class="col-md-8" id="img_central">
-      <img alt="testes" src="http://placehold.it/600x350">
+      <img alt="testes" src="http://placehold.it/700x350">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
     </div>
     <div class="col-md-4 side_img_carrousel">
       <div class="item_car">
-        <img alt="testes" src="http://placehold.it/150x100">
+        <a href="" data-target="#carousel-example-generic" data-slide-to="0">
+          <img alt="testes" src="http://placehold.it/150x100">
+        </a>
       </div>
       <div class="item_car">
-        <img alt="testes" src="http://placehold.it/150x100">
+        <a href="" data-target="#carousel-example-generic" data-slide-to="1">
+          <img alt="testes" src="http://placehold.it/150x100">
+        </a>
       </div>
       <div class="item_car">
-        <img alt="testes" src="http://placehold.it/150x100">
+        <a href="" data-target="#carousel-example-generic" data-slide-to="2">
+          <img alt="testes" src="http://placehold.it/150x100">
+        </a>
       </div>
     </div>
+
 
   </div>
 </div>      
@@ -31,7 +50,7 @@
   {% for i in posts %}
   <a href="{% url 'interna' slug=i.slug %}">
     <div class="row topic_item">
-      
+
       <div class="col-md-3">
         <img alt="testes" src="http://placehold.it/150x100">
       </div>              
