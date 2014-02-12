@@ -8,7 +8,9 @@
   <title></title>
   <link rel="stylesheet" href="{{STATIC_PREFIX}}style.css">
   <link rel="stylesheet" href="{{STATIC_PREFIX}}css/bootstrap.min.css">  
-  <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>  
+  <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="{{STATIC_PREFIX}}js/bootstrap.js"></script>
+
   
 
 </head>
@@ -87,5 +89,11 @@
       
     </div>
   </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.carousel').carousel();
+  })
+</script>
 </body>
 </html>
