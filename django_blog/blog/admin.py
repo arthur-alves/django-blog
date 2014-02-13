@@ -16,6 +16,7 @@ make_private.short_description = "Não publicar"
 
 class PostClass(admin.ModelAdmin):
     list_display = ('title', 'owner', 'published')
+    readonly_fields = ('wording_markup_type',)
     actions = [make_public, make_private]
 
     class Media:

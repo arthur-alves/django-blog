@@ -28,12 +28,13 @@ class Posts(models.Model):
     slug = AutoSlugField(populate_from='title', overwrite=True,
                          max_length=255, editable=False)
     resumo = models.TextField(u'Resumo', validators=[MaxLengthValidator(220)])
-    wording = MarkupField(default_markup_type='markdown')
+    wording = MarkupField(
+        default_markup_type='markdown', verbose_name=u'Texto')
     tags = models.CharField(max_length=255)
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category, verbose_name='Categoria')
     pub_date = models.DateTimeField(
         u'Data de Publicação', auto_now_add=True)
-    published = models.BooleanField(u'Publicar?', default=False)    
+    published = models.BooleanField(u'Publicar?', default=False)
 
     class Meta:
         verbose_name = u'Postagem'
