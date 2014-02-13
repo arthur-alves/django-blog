@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'south',
     'django_extensions',
     'blog',
+    'django_media_center',
     'gunicorn',
 
 )

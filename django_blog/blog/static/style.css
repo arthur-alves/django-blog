@@ -17,6 +17,16 @@ blockquote{
 	box-shadow: 1px 1px 1px #000000;
 }
 
+/*Carrousel treatment*/
+
+.side_img_carousel img{
+	float:left;
+	margin-right: 20px;
+	margin-bottom: 8px;
+
+}
+
+
 
 .g_header{
 	width: 250px;
@@ -105,8 +115,7 @@ blockquote{
 	font-size: 17px;		
 }
 
-.carousel-control {
-	width: 30% !important;	
+.carousel-control {	
 	background-image:none  !important;
 }
 
