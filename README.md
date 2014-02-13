@@ -3,6 +3,7 @@ django-blog
 
 ```bash
 Pequeno e eficiente blog feito em django
+OBS: Apenas para aprendizado.
 ```
 
 Instalação:

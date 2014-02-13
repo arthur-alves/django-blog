@@ -7,13 +7,11 @@ from django.http import HttpResponseRedirect
 
 def upload_img(request):
     if request.method == 'POST':
-    	for i in request.FILES:
-
         form = ImageForm(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/thanks/')
+            return HttpResponseRedirect('/thanks/')  # Redirect after POST
     else:
-        form = ImageForm() 
+        form = ImageForm()  # An unbound form
 
     return render(request, 'blog/form.html', {
         'form': form,
