@@ -63,20 +63,11 @@ blockquote{
 	color:white;
 }
 
-.h2_title{
-	background-color: #000000;	
+.bg_title{
+	background-color: #000000;
 	text-align: left;
-	padding: 10px 0 10px 20px;	
-	color:white;	
-}
-
-.h2_title span{
-	padding-bottom: 5px;
-}
-
-.h2_title img{	
-	width:30px;
-	height:30px;
+	padding: 1px 0 5px 31px;
+	color: white;	
 }
 
 .topic{
