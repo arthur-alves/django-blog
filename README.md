@@ -2,7 +2,7 @@ django-blog
 ===========
 
 ```bash
-Pequeno e eficiente blog feito em django
+Simples cms para blog feito em django
 OBS: Apenas para aprendizado.
 ```
 
@@ -12,8 +12,6 @@ Requisitos:
 
 >Postgresql  
 >pacote python-dev  
->postgresql-server-dev-X.Y (Onde X.Y é a versão do postgresql ex: 9.1)  
-
 
 ```bash
 Instaler o PIP:
