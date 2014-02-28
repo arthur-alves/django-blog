@@ -2,7 +2,7 @@
 	padding: 0;
 	margin: 0;
 	font-family:ubuntu;
-	font-size:17px;
+	font-size:20px;
 	border:none;	
 }
 
@@ -26,6 +26,13 @@ blockquote{
 
 }
 
+.side_img_carousel p{
+	color:white;
+}
+
+.side_img_carousel a{
+	color:white;
+}
 
 
 .g_header{
@@ -285,6 +292,6 @@ blockquote{
 }
 .icon-journal:before {
 	content: "\e602";
-	font-size: 40px;
+	font-size: 30px;
 	margin-right: 8px;	
 }

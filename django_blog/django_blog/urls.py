@@ -12,6 +12,8 @@ urlpatterns = patterns(
     url(r'^interna/(?P<slug>[0-9A-Za-z\-_]+)$',
         'blog.views.interna', name='interna'),
     url(r'^formulario$', 'django_media_center.views.upload_img', name='form'),
+    url(r'^listagem$', 'blog.views.listagem', name='listagem'),
+
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),

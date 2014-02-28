@@ -42,6 +42,7 @@
       </a>
       <a href="{% url 'interna' slug=i.slug %}">
        <h3>{{i.title | capfirst}}</h3>
+       <p>{{i.resumo | truncatechars:35}}</p>
       </a>
     </div>
     {% endfor %}

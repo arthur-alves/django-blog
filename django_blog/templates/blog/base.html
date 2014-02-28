@@ -34,7 +34,7 @@
               </li>
               <li>|</li>
               <li>                
-                <a href="#"><span class="icon-file"></span>Listagem Geral</a>
+                <a href="{% url 'listagem' %}"><span class="icon-file"></span>Listagem Geral</a>
               </li>
               <li>|</li>
               <li>                
@@ -71,11 +71,20 @@
         </div>
         <!-- SIDE BAR -->
         <div class="col-md-4 side_bar">
-          <div class="bg_title">
+          <div class="row bg_title">
             <h2><span class="icon-console-big"></span>Últimos tutoriais</h2>
           </div>
-          <div>
+          <div class="row">
             <h3><span class="icon-file"></span> Categorias </h3>
+            {% for i in categorias %}
+            <div class="col-md-12" >
+            <span>{{i.category}}</span>
+            </div>
+            <div class="col-md-12" >
+            <span>{{i.category}}</span>            
+            </div>
+            {% endfor %}
+            
           </div>
           
         </div>
