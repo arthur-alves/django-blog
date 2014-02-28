@@ -37,13 +37,17 @@
   <div class="col-md-5">
     {% for i in carrousel %}
     <div class="row side_img_carousel">
+    <div class="col-md-4">
       <a href="javascript:;"  data-target="#carousel_boot" data-slide-to="{{forloop.counter0}}">
         <img alt="testes" src="http://placehold.it/150x100">
       </a>
+    </div>
+    <div class="col-md-8">
       <a href="{% url 'interna' slug=i.slug %}">
        <h3>{{i.title | capfirst}}</h3>
        <p>{{i.resumo | truncatechars:35}}</p>
       </a>
+    </div>
     </div>
     {% endfor %}
   </div>
@@ -64,11 +68,12 @@
   <a href="{% url 'interna' slug=i.slug %}">
     <div class="row topic_item">
 
-      <div class="col-md-3">
+      <div class="col-md-5">
         <img alt="testes" class="thumbnail" src="http://placehold.it/150x100">
       </div>              
-      <div class="col-md-9">
-        <span class="label label-default">{{i.category | capfirst}}:</span><p>{{i.resumo}}</p>
+      <div class="col-md-7">
+        <h3><span class="label label-default">{{i.category | capfirst}}:</span></h3>
+        <p>{{i.resumo}}</p>
       </div>
 
     </div>

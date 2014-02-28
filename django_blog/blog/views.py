@@ -25,3 +25,6 @@ def listagem(request):
     return render_to_response('blog/listagem.html', {
         'listagem': Posts.objects.all().filter(published=True)
     })
+
+def sobre(request):
+    return render_to_response('blog/sobre.html')

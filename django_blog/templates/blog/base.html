@@ -18,7 +18,7 @@
   <div class="container">
     <div class="row">     
       <div class="row logo_header">
-        <a href="index.html"><img  alt="testes" src="{{STATIC_PREFIX}}img/Modelo_Site.png"></a>
+        <a href="{% url 'home' %}"><img  alt="testes" src="{{STATIC_PREFIX}}img/Modelo_Site.png"></a>
       </div>
       <div class="row g_shadow">        
         <!-- Barra de navegação -->
@@ -47,7 +47,7 @@
               </li>
               <li>|</li>
               <li>
-                <a href="#"><span class="icon-github"></span>Créditos</a>
+                <a href="{% url 'sobre' %}"><span class="icon-github"></span>Sobre</a>
               </li>
             </ul>
 

@@ -2,7 +2,6 @@
 	padding: 0;
 	margin: 0;
 	font-family:ubuntu;
-	font-size:20px;
 	border:none;	
 }
 
@@ -19,19 +18,19 @@ blockquote{
 
 /*Carrousel treatment*/
 
-.side_img_carousel img{
-	float:left;
-	margin-right: 20px;
-	margin-bottom: 8px;
-
-}
 
 .side_img_carousel p{
 	color:white;
+	
+}
+.side_img_carousel{
+	margin-right: 20px;
+	margin-bottom: 8px;
 }
 
 .side_img_carousel a{
 	color:white;
+
 }
 
 
@@ -98,8 +97,8 @@ blockquote{
 }
 
 .topic_item img{
-	height:100px;
-	width:150px;	
+	height:160px;
+	width:270px;	
 	transition: height, width 0.5s ease;	
 }
 
