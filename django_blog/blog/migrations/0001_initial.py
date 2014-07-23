@@ -18,12 +18,17 @@ class Migration(SchemaMigration):
         db.create_table(u'blog_posts', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('owner', self.gf('django.db.models.fields.related.ForeignKey')(related_name='entries', to=orm['auth.User'])),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('wording', self.gf('django.db.models.fields.TextField')()),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('slug', self.gf('django_extensions.db.fields.AutoSlugField')(allow_duplicates=False, max_length=255, separator=u'-', blank=True, populate_from='title', overwrite=True)),
+            ('resumo', self.gf('django.db.models.fields.TextField')()),
+            ('wording', self.gf('markupfield.fields.MarkupField')(rendered_field=True)),
             ('tags', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('wording_markup_type', self.gf('django.db.models.fields.CharField')(default='markdown', max_length=30)),
             ('category', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['blog.Category'])),
+            ('_wording_rendered', self.gf('django.db.models.fields.TextField')()),
             ('pub_date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
             ('published', self.gf('django.db.models.fields.BooleanField')(default=False)),
+            ('img_post', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
         ))
         db.send_create_signal(u'blog', ['Posts'])
 
@@ -72,14 +77,19 @@ class Migration(SchemaMigration):
         },
         u'blog.posts': {
             'Meta': {'object_name': 'Posts'},
+            '_wording_rendered': ('django.db.models.fields.TextField', [], {}),
             'category': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['blog.Category']"}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'img_post': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
             'owner': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'entries'", 'to': u"orm['auth.User']"}),
             'pub_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'published': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'resumo': ('django.db.models.fields.TextField', [], {}),
+            'slug': ('django_extensions.db.fields.AutoSlugField', [], {'allow_duplicates': 'False', 'max_length': '255', 'separator': "u'-'", 'blank': 'True', 'populate_from': "'title'", 'overwrite': 'True'}),
             'tags': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'wording': ('django.db.models.fields.TextField', [], {})
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'wording': ('markupfield.fields.MarkupField', [], {'rendered_field': 'True'}),
+            'wording_markup_type': ('django.db.models.fields.CharField', [], {'default': "'markdown'", 'max_length': '30'})
         },
         u'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},

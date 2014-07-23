@@ -16,8 +16,23 @@ make_private.short_description = "Não publicar"
 
 class PostClass(admin.ModelAdmin):
     list_display = ('title', 'owner', 'published')
+    list_filter = ('title', 'owner')
     readonly_fields = ('wording_markup_type',)
     actions = [make_public, make_private]
+    exclude = ('owner',)
+    # fieldsets = (
+    #         (None, {
+    #             'fields' : ('title', 'owner', 'published')
+    #             }),
+    #         ('Opções Avançadas', {
+    #             'classes' : ('collapse',),
+    #             'fields' : ('tags', 'resumo', 'wording')
+    #             }),
+    #     )
+
+    def save_model(self, request, obj, form, change):
+        obj.owner = request.user
+        obj.save()
 
     class Media:
         js = ('js/jquery-1.11.0.min.js',

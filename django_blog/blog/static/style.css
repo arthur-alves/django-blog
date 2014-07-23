@@ -5,6 +5,15 @@
 	border:none;	
 }
 
+
+a:link, a:visited, a:active {
+	text-decoration: none
+	}
+a:hover {
+	text-decoration: underline; 
+	color: #f00
+	}
+
 body{
 
 	background-image:url("img/listras_bg.png");
@@ -43,6 +52,10 @@ blockquote{
 	border-right: 0px solid transparent;
 	float: right;		
 
+}
+
+.read-more{
+	float: right;
 }
 
 .g_header input{
@@ -177,6 +190,19 @@ blockquote{
 	margin-right:5px; 
 }
 
+.g_nav input{
+	background-color: black;
+	border: none;
+	color:white;
+	margin-left: 10px; 
+	width: 150px;
+	font-weight: bold;
+	transition: background-color 0.9s ease;
+}
+
+.g_nav input:focus{
+	background-color: rgba(72,72,72, 0.7);
+}
 
 .side_bar_item{
 	text-align: left;
@@ -207,11 +233,11 @@ blockquote{
 /*Icon fonts*/
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?xu5ml');
-	src:url('fonts/icomoon.eot?#iefixxu5ml') format('embedded-opentype'),
-	url('fonts/icomoon.woff?xu5ml') format('woff'),
-	url('fonts/icomoon.ttf?xu5ml') format('truetype'),
-	url('fonts/icomoon.svg?xu5ml#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?3ik5t0');
+	src:url('fonts/icomoon.eot?#iefix3ik5t0') format('embedded-opentype'),
+		url('fonts/icomoon.woff?3ik5t0') format('woff'),
+		url('fonts/icomoon.ttf?3ik5t0') format('truetype'),
+		url('fonts/icomoon.svg?3ik5t0#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -223,7 +249,7 @@ blockquote{
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;	
+	line-height: 1;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
@@ -231,66 +257,74 @@ blockquote{
 }
 
 .icon-home:before {
-	content: "\e600";
-}
-.icon-github:before {
-	content: "\e601";
-}
-.icon-newspaper:before {
-	content: "\e602";
-}
-.icon-tag:before {
 	content: "\e603";
 }
-.icon-image:before {
+.icon-git:before {
 	content: "\e604";
 }
-.icon-play:before {
+.icon-newspaper:before {
 	content: "\e605";
 }
-.icon-music:before {
+.icon-tag:before {
 	content: "\e606";
 }
-.icon-android:before {
+.icon-image2:before {
 	content: "\e607";
 }
-.icon-tux:before {
+.icon-youtube:before {
 	content: "\e608";
 }
-.icon-github2:before {
+.icon-music:before {
 	content: "\e609";
 }
-.icon-clock:before {
+.icon-android:before {
 	content: "\e60a";
 }
-.icon-quill:before {
+.icon-linux:before {
 	content: "\e60b";
 }
-.icon-calendar:before {
+.icon-git2:before {
 	content: "\e60c";
 }
-.icon-star:before {
+.icon-time:before {
 	content: "\e60d";
 }
-.icon-heart:before {
+.icon-pena:before {
 	content: "\e60e";
 }
-.icon-console:before {
+.icon-calendar:before {
 	content: "\e60f";
 }
-.icon-bubble:before {
+.icon-star:before {
 	content: "\e610";
 }
-.icon-file:before {
+.icon-heart:before {
 	content: "\e611";
 }
-.icon-console-big:before {
-	content: "\e60f";
-	font-size: 30px;
-	margin-right: 8px;
+.icon-console:before {
+	content: "\e612";
 }
-.icon-journal:before {
+.icon-bubble:before {
+	content: "\e613";
+}
+.icon-file:before {
+	content: "\e614";
+}
+.icon-image:before {
+	content: "\e615";
+}
+.icon-search:before {
+	content: "\e600";
+}
+.icon-key:before {
+	content: "\e601";
+}
+.icon-cog:before {
 	content: "\e602";
-	font-size: 30px;
-	margin-right: 8px;	
+}
+.icon-checkmark-circle:before {
+	content: "\e616";
+}
+.icon-feed:before {
+	content: "\e617";
 }

@@ -27,7 +27,7 @@ class Posts(models.Model):
     title = models.CharField(u'Título', max_length=100)
     slug = AutoSlugField(populate_from='title', overwrite=True,
                          max_length=255, editable=False)
-    resumo = models.TextField(u'Resumo', validators=[MaxLengthValidator(220)])
+    resumo = models.TextField(u'Resumo', validators=[MaxLengthValidator(173)])
     wording = MarkupField(
         default_markup_type='markdown', verbose_name=u'Texto')
     tags = models.CharField(max_length=255)
@@ -35,6 +35,7 @@ class Posts(models.Model):
     pub_date = models.DateTimeField(
         u'Data de Publicação', auto_now_add=True)
     published = models.BooleanField(u'Publicar?', default=False)
+    img_post =  models.ImageField(upload_to='post_img')
 
     class Meta:
         verbose_name = u'Postagem'
