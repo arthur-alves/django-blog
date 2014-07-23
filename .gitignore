@@ -1,2 +1,3 @@
 *.py[cod]
 deploy_settings.py
+*.jpg
