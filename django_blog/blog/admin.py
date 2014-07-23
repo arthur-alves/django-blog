@@ -2,6 +2,7 @@
 from django.contrib import admin
 from django import forms
 from blog.models import Posts, Category
+import os
 
 
 def make_public(modeladmin, request, queryset):
@@ -31,6 +32,7 @@ class PostClass(admin.ModelAdmin):
     #     )
 
     def save_model(self, request, obj, form, change):
+        # import ipdb; ipdb.set_trace()
         obj.owner = request.user
         obj.save()
 
@@ -47,5 +49,10 @@ class PostClass(admin.ModelAdmin):
                }
 
 
+class CategoryClass(admin.ModelAdmin):
+    def save_model(self, request, obj, form, change):
+        obj.category = obj.category.lower()
+        obj.save()
+
 admin.site.register(Posts, PostClass)
-admin.site.register(Category)
+admin.site.register(Category, CategoryClass)

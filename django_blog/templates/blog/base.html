@@ -34,7 +34,7 @@
               </li>
               <li>|</li>
               <li>                
-                <a href="{% url 'listagem' %}"><span class="icon-file"></span>Listagem Geral</a>
+                <a href="{% url 'listagem_geral' %}"><span class="icon-file"></span>Listagem Geral</a>
               </li>
               <li>|</li>
               <li>                
@@ -78,10 +78,7 @@
             <h3><span class="icon-file"></span> Categorias </h3>
             {% for i in categorias %}
             <div class="col-md-12" >
-            <span>{{i.category}}</span>
-            </div>
-            <div class="col-md-12" >
-            <span>{{i.category}}</span>            
+            <span><a href="{% url 'listagem' category=i %}">{{i.category}}</a></span>
             </div>
             {% endfor %}
             

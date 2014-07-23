@@ -17,11 +17,20 @@ def index(request):
 
 def interna(request, slug):
     return render_to_response('blog/interna.html', {
-        'article': Posts.objects.get(slug=slug)
+        'article': Posts.objects.get(slug=slug),
+        'categorias': Category.objects.all()
     })
 
 
-def listagem(request):
+def listagem(request, category):
+    return render_to_response('blog/listagem.html', {
+        'listagem': Posts.objects.all().filter(category=category,
+                                               published=True),
+        'categorias': Category.objects.all()
+    })
+
+
+def listagem_geral(request):
     return render_to_response('blog/listagem.html', {
         'listagem': Posts.objects.all().filter(published=True)
     })

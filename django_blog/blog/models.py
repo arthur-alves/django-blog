@@ -6,7 +6,7 @@ import markdown
 from django.core.validators import MaxLengthValidator
 from markupfield.fields import MarkupField
 from django_extensions.db.fields import AutoSlugField
-
+from django.db.models.signals import pre_save, post_save
 
 class Category(models.Model):
     category = models.CharField(
@@ -35,7 +35,7 @@ class Posts(models.Model):
     pub_date = models.DateTimeField(
         u'Data de Publicação', auto_now_add=True)
     published = models.BooleanField(u'Publicar?', default=False)
-    img_post =  models.ImageField(upload_to='post_img')
+    img_post =  models.ImageField(upload_to='post_img', verbose_name=u'Imagem')
 
     class Meta:
         verbose_name = u'Postagem'
@@ -43,3 +43,13 @@ class Posts(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+def change_img(sender, instance, **kwargs):
+    try:
+        old_img = Posts.objects.get(id=instance.id).img_post 
+        if instance.img_post.name != old_img.name:
+            old_img.delete(False)
+    except:pass
+
+pre_save.connect(change_img, sender=Posts)

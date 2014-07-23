@@ -13,9 +13,11 @@ urlpatterns = patterns(
     url(r'^interna/(?P<slug>[0-9A-Za-z\-_]+)$',
         'blog.views.interna', name='interna'),
     url(r'^formulario$', 'django_media_center.views.upload_img', name='form'),
-    url(r'^listagem$', 'blog.views.listagem', name='listagem'),
+    url(r'^listagem/(?P<category>[0-9A-Za-z]+)$', 'blog.views.listagem', name='listagem'),
+    url(r'^listagem_geral$', 'blog.views.listagem_geral', name='listagem_geral'),
 
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
