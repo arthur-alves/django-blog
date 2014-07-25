@@ -5,7 +5,6 @@
 	border:none;	
 }
 
-
 a:link, a:visited, a:active {
 	text-decoration: none
 	}
@@ -24,6 +23,17 @@ body{
 blockquote{
 	box-shadow: 1px 1px 1px #000000;	
 }
+
+
+/*Overwrite this class bootstrap*/
+.list-group-item{
+	padding: 19px 14px !important;
+}
+
+.table.side-bar tbody a{
+	color: white;
+}
+
 
 /*Carrousel treatment*/
 
@@ -96,7 +106,8 @@ blockquote{
 .topic_item{	
 	text-align: justify;
 	transition: color, box-shadow 0.3s ease;
-	padding:8px;	
+	padding-top:16px;
+	padding-right: 14px;	
 	margin-bottom: 10px;
 }
 
@@ -104,9 +115,32 @@ blockquote{
 	box-shadow: 1px 1px 3px #000000;
 }
 
-
 .topic_box{
 	padding:20px;
+}
+
+
+.topic_box.terminal{
+	background-image: url('img/terminal.png');
+	background-repeat: no-repeat;
+	padding-top: 50px;
+}
+
+/*Console Box*/
+
+#command{
+	color: white;
+	border: none;
+	width: 500px;
+}
+#console{
+	margin-right: 10px;
+	float: left;
+	color: white;
+}
+
+.result{
+	color: white;
 }
 
 .topic_item img{
@@ -138,8 +172,17 @@ blockquote{
 	background-color: rgba(0,0,0,0.3);
 	/*box-shadow: 5px 0px 0px #000000;*/
 	padding: 30px;
+	color: white;
 }
 
+.g_center a{
+	color: #888888;
+}
+
+.g_center a:hover {
+	text-decoration: none; 
+	color: white;
+	}
 
 .logo_header{
 	background-color: rgba(0,0,0,1);

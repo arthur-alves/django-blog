@@ -18,7 +18,7 @@
   <div class="container">
     <div class="row">     
       <div class="row logo_header">
-        <a href="{% url 'home' %}"><img  alt="testes" src="{{STATIC_PREFIX}}img/Modelo_Site.png"></a>
+        <a href="{% url 'home' %}"><img  alt="testes" src="{{STATIC_PREFIX}}img/tux2.jpg"></a>
       </div>
       <div class="row g_shadow">        
         <!-- Barra de navegação -->
@@ -57,7 +57,7 @@
       
       
     </div>
-    <div class="row">
+    <div class="row tux">
 
 
       {% block carrossel %}
@@ -75,12 +75,22 @@
             <h2><span class="icon-console-big"></span>Últimos tutoriais</h2>
           </div>
           <div class="row">
-            <h3><span class="icon-file"></span> Categorias </h3>
-            {% for i in categorias %}
-            <div class="col-md-12" >
-            <span><a href="{% url 'listagem' category=i %}">{{i.category}}</a></span>
-            </div>
-            {% endfor %}
+            <table class="table side-bar">
+              <thead>
+                <tr>
+                  <th><h3><span class="icon-file btn btn-primary btn-lg disabled"></span> Categorias </h3></th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for i in categorias %}
+              <tr>
+                <td>
+                <span><a class="label label-info" href="{% url 'listagem' category=i %}">{{i.category}}</a></span>
+                </td>
+              </tr>
+              {% endfor %}
+              </tbody>
+            </table>
             
           </div>
           
@@ -92,10 +102,10 @@
     </div>
   </div>
 
-<script type="text/javascript">
+  <script type="text/javascript">
   $(document).ready(function(){
     $('.carousel').carousel();
   })
-</script>
+  </script>
 </body>
 </html>

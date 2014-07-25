@@ -7,13 +7,64 @@
 <div class="topic_box ">
   <h3> Quem sou:</h3>
 </div>
-<div class="topic_box " style="height:900px;">
-  <p>
-    Me chamo Arthur, formado em Produção Multimídia, pela UNIBH, trabalho com desenvolvimento web back-end. Criei esse blog com um simples intúito de divulgar informações diversas sobre linux, games, desenvolvimento, tutoriais, artigos e etc. Tudo que eu puder expor de relevante ao meu ver, compartilharei aqui com todos. Espero que seja realmente útil.
-  </p>
-  <p>
-    Arthur A.S
-  </p>
+<div class="topic_box terminal" style="height:900px;">
+	<div class="row console-line">
+		<div id="console">
+			<span>arthur@sand-box:~$ </span>
+		</div>
+		<div id="command"></div>
+	</div>
+	<div class="row result">
+
+	</div>
+	<div class="row end">
+		<div id="console">
+			
+		</div>		
+		<div id="command"></div>
+	</div>
+
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	var present = 	'#############################</br>' +
+					'## Arthur Alves - Back-end Developer ## </br>' +
+					'#############################</br>' +
+					'</br>' +
+					'Apaixonado por tecnologia  e programação</br>' +
+					'</br>' +
+					'Conhecimentos:</br>' +
+					'- Ambiente GNU/Linux - Debian</br>' +
+					'- Python</br>' +
+					'- Django</br>' +
+					'- Web2py</br>' +
+					'- javascript/Jquery</br>' +
+					'- Deploy automático</br>' +
+					'- Versionamento : GIT</br>' +
+					'- Shell Script</br>' 
+
+	var letra = 'cat arthur.txt'.split('');
+	var console_line = "<span>arthur@sand-box:~$ </span>";
+	for (i in letra){
+		(function (i){setTimeout(function(){
+			$('.console-line > #command').last().append(letra[i]);
+		},100*i)}(i));
+	};
+
+	setTimeout(function() {
+		$('.result').html(present);
+
+
+	}, 2000);
+
+	setTimeout(function() {
+		$('.end > #console').append(console_line);
+	}, 2500);
+
+});
+</script>
+
 {% endblock %}
 

@@ -16,11 +16,13 @@ make_private.short_description = "Não publicar"
 
 
 class PostClass(admin.ModelAdmin):
-    list_display = ('title', 'owner', 'published')
-    list_filter = ('title', 'owner')
+    list_display = ('title', 'owner', 'pub_date', 'published',)
+    list_filter = ('title', 'owner', 'pub_date',)
     readonly_fields = ('wording_markup_type',)
     actions = [make_public, make_private]
+    search_fields = ('title',)
     exclude = ('owner',)
+    date_hierarchy= 'pub_date'
     # fieldsets = (
     #         (None, {
     #             'fields' : ('title', 'owner', 'published')

@@ -34,7 +34,7 @@ class Posts(models.Model):
     category = models.ForeignKey(Category, verbose_name='Categoria')
     pub_date = models.DateTimeField(
         u'Data de Publicação', auto_now_add=True)
-    published = models.BooleanField(u'Publicar?', default=False)
+    published = models.BooleanField(u'Publicado?', default=False)
     img_post =  models.ImageField(upload_to='post_img', verbose_name=u'Imagem')
 
     class Meta:

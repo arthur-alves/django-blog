@@ -14,5 +14,11 @@ $(document).ready(function(){
 		    return previewContent
 		 },
 	});
+
+	// Exibe Imagem no post
+	var img_href = $('.file-upload').find('a').attr('href');
+	var img_tag = '<img src="' + img_href + '" width="270" height="160" alt="admin img">';
+	$('.file-upload').prepend(img_tag);
+
 })
 

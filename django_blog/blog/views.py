@@ -32,7 +32,8 @@ def listagem(request, category):
 
 def listagem_geral(request):
     return render_to_response('blog/listagem.html', {
-        'listagem': Posts.objects.all().filter(published=True)
+        'listagem': Posts.objects.all().filter(published=True),
+        'categorias': Category.objects.all()
     })
 
 def sobre(request):
