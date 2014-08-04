@@ -2,7 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
-import markdown
+#import markdown
 from django.core.validators import MaxLengthValidator
 from markupfield.fields import MarkupField
 from django_extensions.db.fields import AutoSlugField

@@ -15,6 +15,7 @@ urlpatterns = patterns(
     url(r'^formulario$', 'django_media_center.views.upload_img', name='form'),
     url(r'^listagem/(?P<category>[0-9A-Za-z]+)$', 'blog.views.listagem', name='listagem'),
     url(r'^listagem_geral$', 'blog.views.listagem_geral', name='listagem_geral'),
+    url(r'^hashtags$', 'blog.views.hashtags', name='hashtags'),
 
     # url(r'^blog/', include('blog.urls')),
 
