@@ -1,28 +1,20 @@
 {% extends "blog/base.html" %}
 {% block article %}
+{% for post in listagem %}
+<div class="row featurette each_posts">
+  <div class="col-md-3 post_img">
+  <img class="featurette-image img-responsive img-circle" data-src="holder.js/500x500/auto" alt="500x500" src="{% url 'home'%}media/{{ post.img_post }}">
+  </div>
 
-<div class="bg_title">
-  <h2><span class="icon-journal"></span>Listagem</h2>
-</div>
-<div class="topic_box">
-  {% for i in listagem %}
-  <a href="{% url 'interna' slug=i.slug %}">
-    <div class="row topic_item">
-
-      <div class="col-md-5">
-        <img alt="testes" class="thumbnail" src="{% url 'home'%}media/{{ i.img_post }}">
-      </div>              
-      <div class="col-md-7 list-group-item">        
-        <h4>{{i.title}}</h4>
-        <span class="label label-default">{{i.category | capfirst}}:</span>
-        <p class="text-justify">{{i.resumo}}</p>
-        <p class="read-more"><span class="label label-info">Leia mais... </span></p>
-      </div>
-    </div>
+  <div class="col-md-8 posts">
+  <a href="javascript:;">
+    <h3 class="featurette-heading"><span class="label label-info"> {{post.category | capfirst}}</span> - {{post.title}}</h3>
   </a>
-  <!-- Item -->
-  {% endfor %}
+  <p class="lead">{{post.resumo}}</p>
+
+  </div>
 </div>
+{% endfor %}
 {% endblock %}
 
 

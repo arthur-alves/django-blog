@@ -9,6 +9,7 @@ urlpatterns = patterns(
     '',
     # Examples:
     url(r'^$', 'blog.views.index', name='home'),
+    url(r'^categorias$', 'blog.views.categorias', name='categorias'),
     url(r'^sobre$', 'blog.views.sobre', name='sobre'),
     url(r'^interna/(?P<slug>[0-9A-Za-z\-_]+)$',
         'blog.views.interna', name='interna'),

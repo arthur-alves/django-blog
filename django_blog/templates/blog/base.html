@@ -1,111 +1,75 @@
 <!DOCTYPE html>
 {% load static %}
 {% get_static_prefix as STATIC_PREFIX %}
-<html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
-  <link rel="stylesheet" href="{{STATIC_PREFIX}}style.css">
-  <link rel="stylesheet" href="{{STATIC_PREFIX}}css/bootstrap.min.css">  
-  <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="{{STATIC_PREFIX}}js/bootstrap.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="http://www.favicon.cc/logo3d/129461.png">
 
-  
+	<title>Arthur</title>
+
+	<link href="{{STATIC_PREFIX}}/css/bootstrap.css" rel="stylesheet">
+	<link href="{{STATIC_PREFIX}}style.css" rel="stylesheet">
 
 </head>
+
 <body>
-  <div class="container">
-    <div class="row">     
-      <div class="row logo_header">
-        <a href="{% url 'home' %}"><img  alt="testes" src="{{STATIC_PREFIX}}img/Modelo_Site.png"></a>
-      </div>
-      <div class="row g_shadow">        
-        <!-- Barra de navegação -->
-        <div class="g_menu">
-          <nav class="navbar g_nav">
-            <ul>
-              <li>                
-                <a href="{% url 'home' %}"><span class="icon-home">Home</span></a>
-              </li>
-              <li>|</li>
-              <li>                
-                <a href="#"><span class="icon-newspaper">Artigos</span></a>
-              </li>
-              <li>|</li>
-              <li>                
-                <a href="{% url 'listagem_geral' %}"><span class="icon-file"></span>Listagem Geral</a>
-              </li>
-              <li>|</li>
-              <li>                
-                <a href="#"><span class="icon-bubble"></span>Contato</a>
-              </li>
-              <li>|</li>
-              <li>                
-                <a href="{% url 'sobre' %}"><span class="icon-git"></span>Sobre</a>
-              </li>
+<!-- NAVBAR	================================================== -->
+		<div class="row color-nav">
+			<div class="container">
+				<a href="{% url 'home' %}">
+					<h1 id="logo">Blog <span class="hcolor">Arthur</span> Alves</h1>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="navbar navbar-inverse">
+				<div class="container">
+					<div class="navbar-collapse collapse">
+						<ul class="nav navbar-nav menu-link">
+							<li><a href="{% url 'home' %}">Home</a></li>
+							<li><a href="{% url 'listagem_geral' %}">Listagem Geral</a></li>
+							<li><a href="{% url 'categorias' %}">Categorias</a></li>
+							<li><a href="javascript:;">Tutoriais</a></li>
+							<li><a href="{% url 'sobre' %}">Sobre</a></li>
 
-              <li>|</li>
-              <li>
-                <span class="icon-search"></span><input placeholder="Buscar" type="text" name="search">
-              </li>
-            </ul>
+						</ul>
+					</dipv>
 
-          </nav>
-        </div>
-      </div>
-      
-      
-    </div>
-    <div class="row tux">
+				</div>
+			</div>
+		</div>
+<!-- END - NAVBAR	================================================== -->
+		<div class="container marketing">
+			<div class="row"> 
+			    <!-- Post init -->
+				<div class="col-md-8 center_post">
+					{% block article %}
+          			{% endblock %}
+
+				<!-- Post end -->
+				</div>
+				<!-- SIDEBAR -->
+				<div class="col-md-3 sidebar">
+					<h4><span class="glyphicon glyphicon-list"></span> - Categorias</h4>
+					<ul class="nav nav-pills nav-stacked" >
+						{% for i in categorias %}
+						<li><a href="{% url 'listagem' category=i %}">{{i.category}}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				<!-- END SIDEBAR -->
+
+			</div>
+			
+		</div>
 
 
-      {% block carrossel %}
-      {% endblock %}
-      <div class="row g_artigo">
-        <!-- Corpo capa -->
-        <div class="col-md-8">
-          {% block article %}
 
-          {% endblock %}
-        </div>
-        <!-- SIDE BAR -->
-        <div class="col-md-4 side_bar">
-          <div class="row bg_title">
-            <h2><span class="icon-console-big"></span>Últimos tutoriais</h2>
-          </div>
-          <div class="row">
-            <table class="table side-bar">
-              <thead>
-                <tr>
-                  <th><h3><span class="icon-file btn btn-primary btn-lg disabled"></span> Categorias </h3></th>
-                </tr>
-              </thead>
-              <tbody>
-              {% for i in categorias %}
-              <tr>
-                <td>
-                <span><a class="label label-info" href="{% url 'listagem' category=i %}">{{i.category}}</a></span>
-                </td>
-              </tr>
-              {% endfor %}
-              </tbody>
-            </table>
-            
-          </div>
-          
-        </div>
-        
-      </div>
-      
-      
-    </div>
-  </div>
-
-  <script type="text/javascript">
-  $(document).ready(function(){
-    $('.carousel').carousel();
-  })
-  </script>
 </body>
 </html>

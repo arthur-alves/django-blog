@@ -1,88 +1,22 @@
 {% extends "blog/base.html" %}
-{% block carrossel %}
 {% load static %}
 {% get_static_prefix as STATIC_PREFIX %}
-<div class="row g_center">
-  <!-- Imagem Central do carrousel -->        
-  <div class="col-md-7">
-    <div id="carousel_boot" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-<!--         <li data-target="#carousel_boot" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel_boot" data-slide-to="1"></li>
-        <li data-target="#carousel_boot" data-slide-to="2"></li>   -->    
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        {% for i in carrousel %}
-        <div class="item {% if forloop.first %}active{% endif %}">
-          <a href="{% url 'interna' slug=i.slug %}"><img alt="testes" src="http://placehold.it/700x350"></a>
-          <div class="carousel-caption">
-            <h2>{{i.title | capfirst}}</h2>
-          </div>
-        </div>
-        {% endfor %}
-
-
-      </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel_boot" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      </a>
-      <a class="right carousel-control" href="#carousel_boot" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-5">
-    {% for i in carrousel %}
-    <div class="row side_img_carousel">
-    <div class="col-md-4">
-      <a href="javascript:;"  data-target="#carousel_boot" data-slide-to="{{forloop.counter0}}">
-        <img alt="testes" src="http://placehold.it/150x100">
-      </a>
-    </div>
-    <div class="col-md-8">
-      <a href="{% url 'interna' slug=i.slug %}">
-       <h3>{{i.title | capfirst}}</h3>
-       <p>{{i.resumo | truncatechars:35}}</p>
-      </a>
-    </div>
-    </div>
-    {% endfor %}
-  </div>
-
-
-
-
-</div>      
-{% endblock %}
 {% block article %}
-<div class="bg_title">
-  <h2><span class="icon-journal"></span>Artigos</h2>
-</div>
-<div class="clearfix"></div>
-<!-- Item -->           
-<div class="topic_box">
-  {% for i in posts %}
-  <a href="{% url 'interna' slug=i.slug %}">
-    <div class="row topic_item">
+{% for post in posts %}
 
-      <div class="col-md-5">
-        <img alt="testes" class="thumbnail" src="media/{{ i.img_post }}">
-      </div>              
-      <div class="col-md-7 list-group-item">        
-        <h4>{{i.title}}</h4>
-        <span class="label label-default">{{i.category | capfirst}}:</span>
-        <p class="text-justify">{{i.resumo}}</p>
-        <p class="read-more"><span class="label label-info">Leia mais... </span></p>
-      </div>
+{{forloop.counter|divisibleby:"3"}}
+<div class="row featurette each_posts">
+  <div class="col-md-3 post_img">
+	<img class="featurette-image img-responsive img-circle" data-src="holder.js/500x500/auto" alt="500x500" src="{% url 'home'%}media/{{ post.img_post }}">
+  </div>
 
-    </div>
-  </a>
-  <!-- Item -->
-  {% endfor %}
+  <div class="col-md-8 posts">
+	<a href="javascript:;">
+	  <h3 class="featurette-heading"><span class="label label-info"> {{post.category | capfirst}}</span> - {{post.title}}</h3>
+	</a>
+	<p class="lead">{{post.resumo}}</p>
+
+  </div>
 </div>
+{% endfor %}
 {% endblock %}

@@ -12,9 +12,6 @@ def index(request):
         'posts': Posts.objects.all().order_by('-pub_date').filter(
             published=True
         ),
-        'carrousel': Posts.objects.all().order_by('-pub_date').filter(
-            published=True
-        )[:3],
         'categorias': Category.objects.all()
     })
 
@@ -36,9 +33,16 @@ def listagem(request, category):
 
 def listagem_geral(request):
     return render_to_response('blog/listagem.html', {
-        'listagem': Posts.objects.all().filter(published=True),
+        'listagem': Posts.objects.all().order_by('-pub_date').filter(published=True),
         'categorias': Category.objects.all()
     })
+
+
+def categorias(request):
+    return render_to_response('blog/categorias.html',{
+        'todas': Category.objects.all(),
+        'categorias': Category.objects.all().reverse(),
+        })
 
 def sobre(request):
     return render_to_response('blog/sobre.html')
