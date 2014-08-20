@@ -3,6 +3,16 @@
 	padding:0;
 }
 
+pre{
+	/*font-weight: bold;*/
+	color:#fff;
+	background-color:#101010; 
+}
+
+small{
+	font-style: italic;
+}
+
 .navbar-nav li:hover{
 	background-image: url("img/hover.png");
 	background-repeat:  repeat-x;
@@ -68,6 +78,21 @@ body {
 	height: 140px;
 }
 
+.console-bg{
+	background-image: url(img/top-terminal.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 500px;
+	background-color: #222222;
+/*	background-image: url(img/bg.png);*/
+	box-shadow: inset 0 0 100px #000000;
+	color: #2cffb6;
+	text-shadow: 0.1em 0.05em 0.5em #2cffb6;
+	padding: 40px 0 0 20px;
+
+}
+
+
 .active{
 	background-color: transparent !important;
 }
@@ -107,10 +132,20 @@ footer{
 }
 
 .marketing{
+	min-height: 100%;
 	height: 100%;
 }
 
 .post_img img{
 	width: 200px;
 	height: 160px;
+	box-shadow: inset 0 0 100px #000000;
+
 }
+
+.post_wording img{
+	height: 300px;
+	float: right;
+	border-radius: 50%;
+}	
+

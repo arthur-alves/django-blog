@@ -26,11 +26,14 @@ class Posts(models.Model):
         User, related_name='entries', verbose_name='Criador')
     title = models.CharField(u'Título', max_length=100)
     slug = AutoSlugField(populate_from='title', overwrite=True,
-                         max_length=255, editable=False)
-    resumo = models.TextField(u'Resumo', validators=[MaxLengthValidator(173)])
+       max_length=255, editable=False)
+    resumo = models.TextField(u'Resumo', validators=[MaxLengthValidator(173)],
+       help_text="Apenas texto")
     wording = MarkupField(
-        default_markup_type='markdown', verbose_name=u'Texto')
-    tags = models.CharField(max_length=255)
+        default_markup_type='markdown', verbose_name=u'Texto',
+        help_text='Este campo aceita markdown ou html puro'
+        )
+    tags = models.CharField(max_length=255, help_text='Separadas por vírgula')
     category = models.ForeignKey(Category, verbose_name='Categoria')
     pub_date = models.DateTimeField(
         u'Data de Publicação', auto_now_add=True)

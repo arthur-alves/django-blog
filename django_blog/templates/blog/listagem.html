@@ -3,17 +3,20 @@
 {% for post in listagem %}
 <div class="row featurette each_posts">
   <div class="col-md-3 post_img">
-  <img class="featurette-image img-responsive img-circle" data-src="holder.js/500x500/auto" alt="500x500" src="{% url 'home'%}media/{{ post.img_post }}">
-  </div>
+    <a href="{% url 'interna' slug=post.slug %}">
+      <img class="featurette-image img-responsive img-circle" data-src="holder.js/500x500/auto" alt="500x500" src="{% url 'home'%}media/{{ post.img_post }}">
+    </div>
 
-  <div class="col-md-8 posts">
-  <a href="javascript:;">
-    <h3 class="featurette-heading"><span class="label label-info"> {{post.category | capfirst}}</span> - {{post.title}}</h3>
-  </a>
-  <p class="lead">{{post.resumo}}</p>
+    <div class="col-md-8 posts">
+
+      <h4 class="featurette-heading"><span class="label label-info"> {{post.category | capfirst}}</span> - {{post.title}}</h4>
+      <p>{{post.resumo}}</p>
+    </a>
 
   </div>
 </div>
+{% empty %}
+<h2>Ops... esta categoria não possui resultado</h2>
 {% endfor %}
 {% endblock %}
 

@@ -1,37 +1,42 @@
 {% extends "blog/base.html" %}
 {% block article %}
 
-<div class=" bg_title">
-	<h2><span class="icon-journal"></span>Sobre</h2>
-</div>
-<div class="topic_box ">
-	<h3> Quem sou:</h3>
-</div>
-<div class="topic_box terminal" style="height:900px;">
-	<div class="row console-line">
-		<div id="console">
+
+<h2>Sobre</h2>
+<h3> Quem sou:</h3>
+<div class="topic_box terminal console-bg">
+	<div class="console-line">
+		<div id="console" style="float:left;">
 			<span>arthur@sand-box:~$ </span>
 		</div>
 		<div id="command"></div>
 	</div>
-	<div class="row result">
+	<div class="result">
 
 	</div>
-	<div class="row end">
+	<div class="end">
 		<div id="console">
-			
+
 		</div>		
 		<div id="command"></div>
 	</div>
 
 </div>
 
+{% endblock %}
+
+{% block script %}
 <script type="text/javascript">
 $(document).ready(function(){
 
-	var present = 	'#############################</br>' +
+	window.onload = function(){
+		terminal();
+	}
+
+	function terminal(){
+		var present = 	'#################################</br>' +
 		'## Arthur Alves - Back-end Developer ## </br>' +
-		'#############################</br>' +
+		'#################################</br>' +
 		'</br>' +
 		'Apaixonado por tecnologia  e programação</br>' +
 		'</br>' +
@@ -45,23 +50,23 @@ $(document).ready(function(){
 		'- Versionamento : GIT</br>' +
 		'- Shell Script</br>' 
 
-	var letra = 'cat arthur.txt'.split('');
-	var console_line = "<span>arthur@sand-box:~$ </span>";
-	for (i in letra){
-		(function (i){setTimeout(function(){
-			$('.console-line > #command').last().append(letra[i]);
-		},100*i)}(i));
+		var letra = 'cat arthur.txt'.split('');
+		var console_line = "<span>arthur@sand-box:~$ </span>";
+		for (i in letra){
+			(function (i){setTimeout(function(){
+				$('.console-line > #command').last().append(letra[i]);
+			},100*i)}(i));
+		};
+
+		setTimeout(function() {
+			$('.result').html(present);
+
+		}, 2000);
+
+		setTimeout(function() {
+			$('.end > #console').append(console_line);
+		}, 2500);
 	};
-
-	setTimeout(function() {
-		$('.result').html(present);
-
-
-	}, 2000);
-
-	setTimeout(function() {
-		$('.end > #console').append(console_line);
-	}, 2500);
 
 });
 </script>

@@ -14,62 +14,86 @@
 	<title>Arthur</title>
 
 	<link href="{{STATIC_PREFIX}}/css/bootstrap.css" rel="stylesheet">
+	<link href="{{STATIC_PREFIX}}/css/font-awesome.min.css" rel="stylesheet">
 	<link href="{{STATIC_PREFIX}}style.css" rel="stylesheet">
 
 </head>
 
 <body>
-<!-- NAVBAR	================================================== -->
-		<div class="row color-nav">
-			<div class="container">
+	<!-- NAVBAR	================================================== -->
+	<div class="row color-nav">
+		<div class="container">
+			<div class="col-md-5">
 				<a href="{% url 'home' %}">
 					<h1 id="logo">Blog <span class="hcolor">Arthur</span> Alves</h1>
 				</a>
 			</div>
-		</div>
-		<div class="row">
-			<div class="navbar navbar-inverse">
-				<div class="container">
-					<div class="navbar-collapse collapse">
-						<ul class="nav navbar-nav menu-link">
-							<li><a href="{% url 'home' %}">Home</a></li>
-							<li><a href="{% url 'listagem_geral' %}">Listagem Geral</a></li>
-							<li><a href="{% url 'categorias' %}">Categorias</a></li>
-							<li><a href="javascript:;">Tutoriais</a></li>
-							<li><a href="{% url 'sobre' %}">Sobre</a></li>
+			<div class="col-md-6">
 
-						</ul>
-					</dipv>
-
-				</div>
 			</div>
 		</div>
-<!-- END - NAVBAR	================================================== -->
-		<div class="container marketing">
-			<div class="row"> 
-			    <!-- Post init -->
-				<div class="col-md-8 center_post">
-					{% block article %}
-          			{% endblock %}
+	</div>
+	<div class="row">
+		<div class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav menu-link">
+						<li><a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+						<li><a href="{% url 'listagem_geral' %}"><span class="glyphicon glyphicon-th-list"></span>  Listagem Geral</a></li>
+						<li><a href="{% url 'categorias' %}"><span class="glyphicon glyphicon-list-alt"></span>    Categorias</a></li>
+						<li><a href="javascript:;"><span class="glyphicon glyphicon-wrench"></span>  Tutoriais</a></li>
+						<li><a href="{% url 'sobre' %}"><span class="glyphicon glyphicon-user"></span>  Sobre</a></li>
+
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- END - NAVBAR	================================================== -->
+	<div class="container marketing">
+		<div class="row"> 
+			<!-- Post init -->
+			<div class="col-md-8 center_post">
+				{% block article %}
+				{% endblock %}
 
 				<!-- Post end -->
-				</div>
-				<!-- SIDEBAR -->
-				<div class="col-md-3 sidebar">
-					<h4><span class="glyphicon glyphicon-list"></span> - Categorias</h4>
+			</div>
+			<!-- SIDEBAR -->
+			<div class="col-md-3">
+				<div class="categoria sidebar">
+					<h4><span class="glyphicon glyphicon-list-alt"></span> - Categorias</h4>
 					<ul class="nav nav-pills nav-stacked" >
 						{% for i in categorias %}
 						<li><a href="{% url 'listagem' category=i %}">{{i.category}}</a></li>
 						{% endfor %}
 					</ul>
 				</div>
-				<!-- END SIDEBAR -->
-
+				<div class="categoria sidebar">
+					<h4><span class="glyphicon glyphicon-user"></span> - Social</h4>
+					<ul class="nav nav-pills nav-stacked" >
+						<li><a href="https://twitter.com/Arthur_4lves" target="_blank"><i class="fa fa-twitter-square"> - Twitter </i> </a></li>
+						<li><a href="https://github.com/arthur-alves" target="_blank"><i class="fa fa-github-alt"> - Github </i> </a></li>
+					</ul>
+				</div>
 			</div>
-			
+
+			<!-- END SIDEBAR -->
+
+
 		</div>
 
+	</div>
+	<div id="footer">
+		<div class="container">
+			<p class="muted credit">This is a sticky footer</p>
+		</div>
+	</div>
 
 
 </body>
+<script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
+{% block script %}
+{% endblock %}
 </html>
