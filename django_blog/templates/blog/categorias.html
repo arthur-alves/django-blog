@@ -1,0 +1,27 @@
+{% extends "blog/base.html" %}
+{% block article %}
+
+
+<div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Categorias</div>
+
+      <!-- Table -->
+      <table class="table">
+        <tbody>
+          
+            <tr>
+            {% for i in todas %}
+              <td><a href="{% url 'listagem' category=i %}">{{i.category}}</a> 
+                <span class="label label-info"> {{i.posts_set.count}}</span></td>
+              {% if  forloop.counter|divisibleby:3 %}
+              </tr>
+              <tr>
+              {% endif %}
+            {% endfor %}
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+{% endblock %}

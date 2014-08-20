@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="{{STATIC_PREFIX}}style.css">
+  <link rel="stylesheet" href="{{STATIC_PREFIX}}css/bootstrap.min.css">  
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">     
+      <div class="row logo_header">
+        <a href="{% url 'home' %}"><img  alt="testes" src="{{STATIC_PREFIX}}img/Modelo_Site.png"></a>
+      </div>
+
+      <div class="row g_shadow"> 
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="{% url 'home' %}"><span class="icon-home">Home</span></a></li>
+              <li><a href="#about"><span class="icon-newspaper">Artigos</span></a></li>
+              <li><a href="{% url 'listagem_geral' %}"><span class="icon-file"></span>Listagem Geral</a></li>
+              <li><a href="#contact"><span class="icon-bubble"></span>Contato</a></li>
+              <li><a href="{% url 'sobre' %}"><span class="icon-git"></span>Sobre</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="searchbar">
+                <span class="icon-search"></span><input placeholder="Buscar" type="text" name="search">
+              </li>
+              
+            </ul>
+          </div>
+        </nav>       
+        <!-- Barra de navegação -->
+<!--         <div class="g_menu">
+          <nav class="navbar g_nav">
+            <ul>
+              <li>                
+                <a href="{% url 'home' %}"><span class="icon-home">Home</span></a>
+              </li>
+              <li>|</li>
+              <li>                
+                <a href="#"><span class="icon-newspaper">Artigos</span></a>
+              </li>
+              <li>|</li>
+              <li>                
+                <a href="{% url 'listagem_geral' %}"><span class="icon-file"></span>Listagem Geral</a>
+              </li>
+              <li>|</li>
+              <li>                
+                <a href="#"><span class="icon-bubble"></span>Contato</a>
+              </li>
+              <li>|</li>
+              <li>                
+                <a href="{% url 'sobre' %}"><span class="icon-git"></span>Sobre</a>
+              </li>
+
+              <li>|</li>
+              <li>
+                <span class="icon-search"></span><input placeholder="Buscar" type="text" name="search">
+              </li>
+            </ul>
+
+          </nav>
+        </div> -->
+      </div>
+      
+      
+    </div>
+    <div class="row tux">
+
+
+      {% block carrossel %}
+      {% endblock %}
+      <div class="row g_artigo">
+        <!-- Corpo capa -->
+        <div class="col-md-8">
+          {% block article %}
+
+          {% endblock %}
+        </div>
+        <!-- SIDE BAR -->
+        <div class="col-md-4 side_bar">
+          <div class="row bg_title">
+            <h2><span class="icon-console-big"></span>Últimos tutoriais</h2>
+          </div>
+          <div class="row">
+            <table class="table side-bar">
+              <thead>
+                <tr>
+                  <th><h3><span class="icon-file btn btn-primary btn-lg disabled"></span> Categorias </h3></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in categorias %}
+                <tr>
+                  <td>
+                    <span><a class="label label-info" href="{% url 'listagem' category=i %}">{{i.category}}</a></span>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      
+    </div>
+  </div>
+
+
+</body>
+<script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="{{STATIC_PREFIX}}js/bootstrap.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.carousel').carousel();
+})
+</script>
+</html>
