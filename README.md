@@ -1,4 +1,4 @@
-django-blog
+Blog feito em django
 ===========
 
 **Simples cms para blog feito em Django
@@ -6,9 +6,9 @@ OBS: Apenas para aprendizado.**
 
 Notes:
 
->Editor de textos Markdowm,rst, html.
-Gerenciador de imagens e arquivos simples.
-Editor com preview de postagens
+>Editor de textos Markdowm,rst, html.  
+Gerenciador de imagens e arquivos simples.  
+Editor com preview de postagens  
 
 
 Instalação:
