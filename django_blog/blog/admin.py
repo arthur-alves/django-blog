@@ -53,6 +53,7 @@ class PostClass(admin.ModelAdmin):
 
 class CategoryClass(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
+        import ipdb; ipdb.set_trace()
         obj.category = obj.category.title()
         obj.save()
 

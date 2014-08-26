@@ -3,6 +3,10 @@
 	padding:0;
 }
 
+p{
+	color: #333;
+}
+
 pre{
 	/*font-weight: bold;*/
 	color:#fff;
@@ -13,6 +17,18 @@ small{
 	font-style: italic;
 }
 
+body, html {
+	background-color: #fff;
+	height: 100%;
+	margin:0;
+    padding:0;
+}
+
+
+.cover{
+	position: relative;
+}
+
 .navbar-nav li:hover{
 	background-image: url("img/hover.png");
 	background-repeat:  repeat-x;
@@ -20,12 +36,9 @@ small{
 }
 a:link{
 	text-decoration: none;
+	color: #333;
 }
 
-body {
-	background-color: #fff;
-	height: 100%;
-}
 
 .each_posts{	
 	padding: 20px;
@@ -102,7 +115,7 @@ body {
 	/*background-position: 0 21px;*/
 	padding: 17px 0 0 85px;
 	background-repeat: no-repeat;
-	color: #606a87;
+	color: #fff;
 	height: 100px;
 }
 
@@ -122,18 +135,9 @@ body {
 	border-radius: 4px;
 }
 
-footer{
-	margin-top: 20px;
-	background-color: black;
-	padding: 10px;
-	position:absolute;
-	width: 100%;
-	bottom: 0;
-}
 
-.marketing{
-	min-height: 100%;
-	height: 100%;
+.content{
+	padding-bottom: 160px;
 }
 
 .post_img img{
@@ -149,3 +153,37 @@ footer{
 	border-radius: 50%;
 }	
 
+
+.social-links a{
+	text-decoration: none;
+	color: #333;
+}
+.social-hash a{
+	text-decoration: none;
+	color: #0084B4;
+}
+
+
+.categoria a{
+	text-decoration: none;
+	color: #333;
+}
+
+.rodape{
+	bottom: 0;
+}
+
+.footnav{
+	background-color: #222222;
+	box-shadow: inset 0 0 100px #000000;
+	height: 80px;
+	padding: 30px 0;
+}
+
+.footnav p{
+	color: #999;
+}
+
+.design{
+	text-align: right;
+}

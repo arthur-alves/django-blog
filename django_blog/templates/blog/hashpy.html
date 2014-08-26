@@ -1,0 +1,46 @@
+{% extends "blog/base.html" %}
+{% block article %}
+
+<div class="social-hash">
+	<h2><span class="fa fa-twitter-square"></span> - <b>Tweet PyHashs</b></h2><small>Veja o que estão falando sobre #python</small>
+	<div class="col-md-5 input-group">
+		<input type="text" class="form-control hash_input">
+		<span class="input-group-btn">
+			<button class="btn btn-default" id="hash_btn" type="button">Buscar</button>
+		</span>
+	</div>
+	{% for i in tweets %}
+	<div class="media sidebar">
+
+		<a class="pull-left" href="http://www.twitter.com/{{i.user.screen_name}}" target="_blank">
+			<img class="media-object" src="{{i.user.profile_image_url}}" alt="{{i.user.name}}">
+		</a>
+		<div class="media-body">
+
+			<h4 class="media-heading"><a href="http://www.twitter.com/{{i.user.screen_name}}" target="_blank">@{{i.user.name}}</a></h4>
+			{{i.text | safe}}
+		</div>
+
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
+{% block hash %}
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#hash_btn').click(function(){
+		document.cookie = "hash_artpy=" + $('.hash_input').val() + ";path=/";
+		document.location.reload();
+	});
+	$('.hash').click(function(){
+		document.cookie = "hash_artpy=" + $(this).html() + ";path=/";
+		document.location.reload();
+	});
+
+});
+	
+</script>
+{% endblock %}

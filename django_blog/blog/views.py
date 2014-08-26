@@ -1,10 +1,11 @@
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
+from twitter_hash import twitter_hash
 from blog.models import Posts
 from blog.models import Category
-import oauth2 as oauth
 import json
 import os
+import re
 
 
 def index(request):
@@ -12,7 +13,8 @@ def index(request):
         'posts': Posts.objects.all().order_by('-pub_date').filter(
             published=True
         ),
-        'categorias': Category.objects.all()
+        'categorias': Category.objects.all(),
+        'tweets': twitter_hash()
     })
 
 
@@ -45,31 +47,18 @@ def categorias(request):
         })
 
 def sobre(request):
-    return render_to_response('blog/sobre.html')
+    return render_to_response('blog/sobre.html', {
+        'categorias': Category.objects.all()
+        })
 
 
-def hashtags(request):
-    # dados do app no Twitter DEV
-    API_KEY = os.environ['API_KEY']
-    API_SECRET = os.environ['API_SECRET']
-
-    TOKEN = os.environ['TOKEN']
-    TOKEN_SECRET = os.environ['TOKEN_SECRET']
-
-    # Login
-
-    #import ipdb; ipdb.set_trace()
-    consumer = oauth.Consumer(key=API_KEY, secret=API_SECRET)
-    token = oauth.Token(key=TOKEN, secret=TOKEN_SECRET)
-    client = oauth.Client(consumer, token)
-
-    search_url = "https://api.twitter.com/1.1/search/tweets.json?q=%23python+%23Python&lang=pt&count=50"
-
-    response, data = client.request(search_url)
-
-    tweets = json.loads(data)
-
-    return HttpResponse(json.dumps(tweets['statuses']), mimetype='application/json')
+def hashpy(request):
+    import ipdb; ipdb.set_trace()
+    hashtag = request.COOKIES.get('hash_artpy').replace('#','')
+    return render_to_response('blog/hashpy.html', {
+        'categorias': Category.objects.all(),
+        'tweets': twitter_hash(50, hashtag)
+    })
 
     # for tweet in tweets['statuses']:
     #     print "Autor: %s" % tweet['user']['name'], tweet['text']

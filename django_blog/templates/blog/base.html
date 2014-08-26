@@ -20,79 +20,113 @@
 </head>
 
 <body>
-	<!-- NAVBAR	================================================== -->
-	<div class="row color-nav">
-		<div class="container">
-			<div class="col-md-5">
-				<a href="{% url 'home' %}">
-					<h1 id="logo">Blog <span class="hcolor">Arthur</span> Alves</h1>
-				</a>
-			</div>
-			<div class="col-md-6">
+	<div class="cover">
+		<!-- NAVBAR	================================================== -->
+		<div class="row">
+			<div class="row color-nav">
+				<div class="container">
+					<div class="col-md-5">
+						<a href="{% url 'home' %}">
+							<h1 id="logo">Blog <span class="hcolor">Arthur</span> Alves</h1>
+						</a>
+					</div>
+					<div class="col-md-6">
 
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="navbar navbar-inverse">
+					<div class="container">
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav menu-link">
+								<li><a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>								
+								<li><a href="{% url 'categorias' %}"><span class="glyphicon glyphicon-list-alt"></span>    Categorias</a></li>
+								<li><a href="javascript:;"><i class="fa fa-pencil-square-o"> Tutoriais </i></a></li>
+								<li><a href="{% url 'hashpy' %}"><i class="fa fa-twitter">  Hashpy</i></a></li>
+								<li><a href="{% url 'sobre' %}#console"><span class="glyphicon glyphicon-user"></span>  Sobre</a></li>
+
+							</ul>
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="navbar navbar-inverse">
-			<div class="container">
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav menu-link">
-						<li><a href="{% url 'home' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<li><a href="{% url 'listagem_geral' %}"><span class="glyphicon glyphicon-th-list"></span>  Listagem Geral</a></li>
-						<li><a href="{% url 'categorias' %}"><span class="glyphicon glyphicon-list-alt"></span>    Categorias</a></li>
-						<li><a href="javascript:;"><span class="glyphicon glyphicon-wrench"></span>  Tutoriais</a></li>
-						<li><a href="{% url 'sobre' %}"><span class="glyphicon glyphicon-user"></span>  Sobre</a></li>
+		<!-- END - NAVBAR	================================================== -->
+		<!-- CONTENT ================================================== -->
+		<div class="row">
+			<div class="container content">
+				<div class="row"> 
+					<!-- POSTS -->
+					<div class="col-md-8 center_post">
+						{% block article %}
+						{% endblock %}
 
-					</ul>
+
+					</div>
+					<!-- POSTS END -->
+					<!-- SIDEBAR -->
+					<div class="col-md-3">
+						<div class="categoria sidebar">
+							<h4><span class="glyphicon glyphicon-list-alt"></span> - <b>Categorias</b></h4>
+							<ul class="nav nav-pills nav-stacked" >
+								{% for i in categorias %}
+								<li><a href="{% url 'listagem' category=i %}">{{i.category}}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+						<div class="sidebar social-links">
+							<h4><span class="glyphicon glyphicon-user"></span> - <b>Social</b></h4>
+							<ul class="nav nav-pills nav-stacked" >
+								<li><a href="https://www.facebook.com/Arthur4lves" target="_blank"><i class="fa fa-facebook-square"> - Facebook </i> </a></li>
+								<li><a href="https://twitter.com/Arthur_4lves" target="_blank"><i class="fa fa-twitter-square"> - Twitter </i> </a></li>
+								<li><a href="https://github.com/arthur-alves" target="_blank"><i class="fa fa-github-alt"> - Github </i> </a></li>
+
+							</ul>
+						</div>
+						{% block hash %}
+						<div class="sidebar">
+							<h4><span class="fa fa-twitter-square"></span> - <b>Tweet PyHashs</b></h4><small>Veja o que estão falando sobre #python</small>
+							{% for i in tweets %}
+							<div class="media">
+								
+								<a class="pull-left" href="http://www.twitter.com/{{i.user.screen_name}}" target="_blank">
+									<img class="media-object" src="{{i.user.profile_image_url}}" alt="{{i.user.name}}">
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading">{{i.user.name}}</h4>
+									{{i.text | safe}}
+								</div>
+								
+							</div>
+							{% endfor %}
+						</div>
+						{% endblock %}
+					</div>
+
+					<!-- END SIDEBAR -->
+
+
 				</div>
 
 			</div>
 		</div>
-	</div>
-	<!-- END - NAVBAR	================================================== -->
-	<div class="container marketing">
-		<div class="row"> 
-			<!-- Post init -->
-			<div class="col-md-8 center_post">
-				{% block article %}
-				{% endblock %}
-
-				<!-- Post end -->
-			</div>
-			<!-- SIDEBAR -->
-			<div class="col-md-3">
-				<div class="categoria sidebar">
-					<h4><span class="glyphicon glyphicon-list-alt"></span> - Categorias</h4>
-					<ul class="nav nav-pills nav-stacked" >
-						{% for i in categorias %}
-						<li><a href="{% url 'listagem' category=i %}">{{i.category}}</a></li>
-						{% endfor %}
-					</ul>
+		<footer class="row rodape footnav">
+			<div class="container footer-content">
+				<div class="col-md-7">
+					<p><span class="fa fa-cogs"></span>  Made with:   <a href="https://www.python.org/doc/copyright/" target="_blank">&copy; Python</a> - <a href="https://www.djangoproject.com/foundation/" target="_blank">&copy; Django Framework</a> - <a href="http://getbootstrap.com/getting-started/#license-faqs" target="_blank">&copy; Bootstrap</a> - <a href="http://fortawesome.github.io/Font-Awesome/license/" target="_blank">&copy; Fontawesome</a></p>
 				</div>
-				<div class="categoria sidebar">
-					<h4><span class="glyphicon glyphicon-user"></span> - Social</h4>
-					<ul class="nav nav-pills nav-stacked" >
-						<li><a href="https://twitter.com/Arthur_4lves" target="_blank"><i class="fa fa-twitter-square"> - Twitter </i> </a></li>
-						<li><a href="https://github.com/arthur-alves" target="_blank"><i class="fa fa-github-alt"> - Github </i> </a></li>
-					</ul>
+				<div class="col-md-4 design">
+					<p><span class="fa fa-paw"></span>  Design by <a href="/sobre#console">Arthur Alves</a></p>
 				</div>
+
 			</div>
-
-			<!-- END SIDEBAR -->
-
-
-		</div>
+		</footer>
 
 	</div>
-	<div id="footer">
-		<div class="container">
-			<p class="muted credit">This is a sticky footer</p>
-		</div>
-	</div>
-
-
 </body>
+
 <script type="text/javascript" src="{{STATIC_PREFIX}}js/jquery-1.11.0.min.js"></script>
 {% block script %}
 {% endblock %}
